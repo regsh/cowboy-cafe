@@ -1,21 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent the Trailburger entree
     /// </summary>
-    class Trailburger
+    public class TrailBurger
     {
+        private bool bun = true;
+        /// <summary>
+        /// Entree includes a bun
+        /// </summary>
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set { bun = value; }
+        }
         private bool ketchup = true;
         /// <summary>
         /// Include ketchup with the entree
         /// </summary>
         public bool Ketchup
         {
-            get { return ketchup; 
+            get
+            {
+                return ketchup;
             }
             set { value = ketchup; }
         }
@@ -25,7 +37,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mustard
         {
-            get { return mustard; 
+            get
+            {
+                return mustard;
             }
             set { mustard = value; }
         }
@@ -44,7 +58,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Cheese
         {
-            get { return cheese; 
+            get
+            {
+                return cheese;
             }
             set { cheese = value; }
         }

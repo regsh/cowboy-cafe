@@ -5,10 +5,22 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to represent the Texas Triple Burger
+    /// Class to represent the Dakota Double Burger
     /// </summary>
-    class TripleBurger
+    public class DakotaDoubleBurger
     {
+        private bool bun = true;
+        /// <summary>
+        /// Entree includes a bun
+        /// </summary>
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set { bun = value; }
+        }
         private bool ketchup = true;
         /// <summary>
         /// Include ketchup with the entree
@@ -69,9 +81,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Lettuce
         {
-            get
-            {
-                return lettuce;
+            get { return lettuce; 
             }
             set { lettuce = value; }
         }
@@ -81,27 +91,11 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mayo
         {
-            get
-            {
-                return mayo;
+            get { return mayo; 
             }
             set { mayo = value; }
         }
-        private bool bacon = true;
-        /// <summary>
-        /// Bacon included in the entree
-        /// </summary>
-        public bool Bacon
-        {
-            get { return bacon; }
-            set { bacon = value; }
-        }
-        private bool egg = true;
-        public bool Egg
-        {
-            get { return egg; }
-            set { egg = value; }
-        }
+
 
 
         /// <summary>
@@ -134,8 +128,6 @@ namespace CowboyCafe.Data
                 if (!tomato) instructions.Add("hold tomato");
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
-                if (!bacon) instructions.Add("hold bacon");
-                if (!egg) instructions.Add("hold egg");
 
                 return instructions;
             }

@@ -5,7 +5,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Pecos Pulled Pork entree
     /// </summary>
-    class PecosPork
+    public class PecosPulledPork
     {
         private bool bread = true;
         /// <summary>
