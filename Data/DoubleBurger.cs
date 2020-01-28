@@ -5,9 +5,9 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to represent the Trailburger entree
+    /// Class to represent the Dakota Double Burger
     /// </summary>
-    class Trailburger
+    class DoubleBurger
     {
         private bool ketchup = true;
         /// <summary>
@@ -15,7 +15,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Ketchup
         {
-            get { return ketchup; 
+            get
+            {
+                return ketchup;
             }
             set { value = ketchup; }
         }
@@ -25,7 +27,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mustard
         {
-            get { return mustard; 
+            get
+            {
+                return mustard;
             }
             set { mustard = value; }
         }
@@ -44,30 +48,57 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Cheese
         {
-            get { return cheese; 
+            get
+            {
+                return cheese;
             }
             set { cheese = value; }
         }
+        private bool tomato = true;
+        /// <summary>
+        /// Tomato included with the entree
+        /// </summary>
+        public bool Tomato
+        {
+            get { return tomato; }
+            set { tomato = value; }
+        }
+        private bool lettuce = true;
+        /// <summary>
+        /// Lettuce included with the entree
+        /// </summary>
+        public bool Lettuce
+        {
+            get { return lettuce; 
+            }
+            set { lettuce = value; }
+        }
+        private bool mayo = true;
+        /// <summary>
+        /// Mayo included with the entree
+        /// </summary>
+        public bool Mayo
+        {
+            get { return mayo; 
+            }
+            set { mayo = value; }
+        }
+
+
 
         /// <summary>
-        /// Price of the trailburger
+        /// The price of the double burger
         /// </summary>
         public double Price
         {
-            get
-            {
-                return 4.50;
-            }
+            get { return 5.20; }
         }
         /// <summary>
-        /// Caloric content of the trailburger
+        /// The caloric content of the double burger
         /// </summary>
         public uint Calories
         {
-            get
-            {
-                return 288;
-            }
+            get => 464;
         }
         /// <summary>
         /// Contains special instructions for the construction of the entree
@@ -82,6 +113,9 @@ namespace CowboyCafe.Data
                 if (!ketchup) instructions.Add("hold ketchup");
                 if (!mustard) instructions.Add("hold mustard");
                 if (!pickle) instructions.Add("hold pickle");
+                if (!tomato) instructions.Add("hold tomato");
+                if (!lettuce) instructions.Add("hold lettuce");
+                if (!mayo) instructions.Add("hold mayo");
 
                 return instructions;
             }
