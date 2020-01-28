@@ -1,5 +1,10 @@
-﻿namespace CowboyCafe.Data
+﻿using System.Collections.Generic;
+
+namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing Rustler's Ribs entree
+    /// </summary>
     class RustlersRibs
     {
         /// <summary>
@@ -22,5 +27,6 @@
                 return 894;
             }
         }
+        
     }
 }
