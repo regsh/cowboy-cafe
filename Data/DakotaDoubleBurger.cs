@@ -31,7 +31,7 @@ namespace CowboyCafe.Data
             {
                 return ketchup;
             }
-            set { value = ketchup; }
+            set { ketchup = value; }
         }
         private bool mustard = true;
         /// <summary>
@@ -128,7 +128,8 @@ namespace CowboyCafe.Data
                 if (!tomato) instructions.Add("hold tomato");
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
-
+                if (!bun) instructions.Add("hold bun");
+ 
                 return instructions;
             }
         }

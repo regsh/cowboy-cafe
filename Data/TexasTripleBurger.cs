@@ -31,7 +31,7 @@ namespace CowboyCafe.Data
             {
                 return ketchup;
             }
-            set { value = ketchup; }
+            set { ketchup = value; }
         }
         private bool mustard = true;
         /// <summary>
@@ -121,14 +121,14 @@ namespace CowboyCafe.Data
         /// </summary>
         public double Price
         {
-            get { return 5.20; }
+            get { return 6.45; }
         }
         /// <summary>
         /// The caloric content of the double burger
         /// </summary>
         public uint Calories
         {
-            get => 464;
+            get => 698;
         }
         /// <summary>
         /// Contains special instructions for the construction of the entree
@@ -148,6 +148,7 @@ namespace CowboyCafe.Data
                 if (!mayo) instructions.Add("hold mayo");
                 if (!bacon) instructions.Add("hold bacon");
                 if (!egg) instructions.Add("hold egg");
+                if (!bun) instructions.Add("hold bun");
 
                 return instructions;
             }
