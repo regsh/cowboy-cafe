@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * AngryChicken.cs
+ * Regan Hale
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

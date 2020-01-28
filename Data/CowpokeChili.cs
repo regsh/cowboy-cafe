@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * CowpokeChili.cs
+ * Provided by Dr. Nathan Bean CIS400
+ * Edited by: Regan Hale
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

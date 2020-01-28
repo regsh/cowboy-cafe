@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * RustlersRibs.cs
+ * Regan Hale
+ */
+using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
