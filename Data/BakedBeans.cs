@@ -1,18 +1,20 @@
 ﻿/*
- * ChiliCheeseFries.cs
+ * BakedBeans.cs
  * Author:Regan Hale
  */
-
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries : Side
+    /// <summary>
+    /// Class to represent the Pan de Campo side
+    /// </summary>
+    public class BakedBeans : Side
     {
         /// <summary>
-        /// Property to represent the price of the Chili Cheese Fries
+        /// Property to represent the price of the Baked Beans
         /// </summary>
         public override double Price
         {
@@ -21,33 +23,33 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("unknown size");
                 }
             }
         }
         /// <summary>
-        /// Property to represent the caloric content of the Chili Cheese Fries
+        /// Property to represent the caloric content of the Baked Beans
         /// </summary>
-        public override uint Calories {
+        public override uint Calories
+        {
             get
             {
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 410;
                     case Size.Medium:
-                        return 524;
+                        return 378;
                     case Size.Small:
-                        return 433;
+                        return 312;
                     default:
                         throw new NotImplementedException("Unknown size");
-                        
                 }
             }
         }
