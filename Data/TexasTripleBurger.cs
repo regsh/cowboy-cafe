@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*TexasTripleBurger.cs
+ * Author:Regan Hale
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*DakotaDoubleBurger.cs
+ * Author: Regan Hale
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Dakota Double Burger
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger: Entree
     {
         private bool bun = true;
         /// <summary>
