@@ -101,21 +101,21 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the double burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.20; }
         }
         /// <summary>
         /// The caloric content of the double burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get => 464;
         }
         /// <summary>
         /// Contains special instructions for the construction of the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
