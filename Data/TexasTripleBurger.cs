@@ -1,5 +1,6 @@
 ﻿/*TexasTripleBurger.cs
  * Author:Regan Hale
+ * Purpose: represent the texas triple burger entree at cowboy cafe
  */
 using System;
 using System.Collections.Generic;

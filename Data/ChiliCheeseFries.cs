@@ -1,6 +1,8 @@
 ﻿/*
  * ChiliCheeseFries.cs
- * Author:Regan Hale
+ * Author:Nathan Bean
+ * Edited by: Regan Hale
+ * Purpose: represent the chili cheese fries side at cowboy cafe
  */
 
 using System;

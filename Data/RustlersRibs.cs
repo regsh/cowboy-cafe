@@ -1,5 +1,6 @@
 ﻿/*RustlersRibs.cs
  * Author:Regan Hale
+ * Purpose: represent the rustlers ribs entree at cowboy cafe
  */
 using System.Collections.Generic;
 

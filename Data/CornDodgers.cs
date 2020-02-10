@@ -1,6 +1,8 @@
 ﻿/*
  * CornDodgers.cs
  * Author:Regan Hale
+ * Class: CornDodgers
+ * Purpose: represent the corn dodgers side at the cowboy cafe
  */
 
 using System;

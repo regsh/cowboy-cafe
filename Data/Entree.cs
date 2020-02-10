@@ -1,5 +1,6 @@
 ﻿/*Entree.cs
  * Author: Regan Hale
+ * Purpose: Base class from which entrees at the cowboy cafe are derived
  * 2/5/2020
  */
 using System;

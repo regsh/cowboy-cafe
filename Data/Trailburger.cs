@@ -1,5 +1,6 @@
 ﻿/*Trailburger.cs
  * Author:Regan Hale
+ * Purpose: represent the Trailburger entree at cowboy cafe
  */
 using System.Collections.Generic;
 

@@ -1,5 +1,6 @@
 ﻿/*DakotaDoubleBurger.cs
  * Author: Regan Hale
+ * Purpose: to represent the DakotaDoubleBurger at the cowboy cafe
  */
 using System;
 using System.Collections.Generic;

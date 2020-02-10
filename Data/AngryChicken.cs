@@ -1,5 +1,7 @@
 ﻿/*AngryChicken.cs
  * Author:Regan Hale
+ * Class: AngryChicken
+ * Purpose: represent the Angry Chicken entree at cowboy cafe
  */
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,7 @@
 ﻿/*
  * PecosPulledPork.cs
  * Author:Regan Hale
+ * Purpose: to represent the Pecos Pulled Pork entree at cowboy cafe
  */
 using System.Collections.Generic;
 

@@ -1,6 +1,7 @@
 ﻿/*
  * PanDeCampo.cs
  * Author:Regan Hale
+ * Purpose: represent the pan de campo side at cowboy cafe
  */
 using System;
 using System.Collections.Generic;
