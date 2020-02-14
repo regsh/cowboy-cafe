@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ﻿/*
  * DakotaDoubleBurger.cs
  * Regan Hale
+=======
+﻿/*DakotaDoubleBurger.cs
+ * Author: Regan Hale
+ * Purpose: to represent the DakotaDoubleBurger at the cowboy cafe
+>>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System;
 using System.Collections.Generic;
@@ -11,7 +17,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Dakota Double Burger
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger: Entree
     {
         private bool bun = true;
         /// <summary>
@@ -105,21 +111,21 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the double burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.20; }
         }
         /// <summary>
         /// The caloric content of the double burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get => 464;
         }
         /// <summary>
         /// Contains special instructions for the construction of the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

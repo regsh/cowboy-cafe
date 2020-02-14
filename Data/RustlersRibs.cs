@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ﻿/*
  * RustlersRibs.cs
  * Regan Hale
+=======
+﻿/*RustlersRibs.cs
+ * Author:Regan Hale
+ * Purpose: represent the rustlers ribs entree at cowboy cafe
+>>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System.Collections.Generic;
 
@@ -9,12 +15,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing Rustler's Ribs entree
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs: Entree
     {
         /// <summary>
         /// The price of the ribs
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -24,7 +30,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Calorie content of the ribs
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -34,7 +40,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for making the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
