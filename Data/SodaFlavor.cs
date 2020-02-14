@@ -12,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Enum representing soda flavors at the Cowboy Cafe
     /// </summary>
-    enum SodaFlavor
+    public enum SodaFlavor
     {
         CreamSoda,
         OrangeSoda,

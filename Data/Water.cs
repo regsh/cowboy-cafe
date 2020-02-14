@@ -12,14 +12,25 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent an order of water
     /// </summary>
-    class Water : Drink
+    public class Water : Drink
     {
+        /// <summary>
+        /// Price of the water
+        /// </summary>
         public override double Price => 0.12;
 
+        /// <summary>
+        /// Caloric content of the water
+        /// </summary>
         public override uint Calories => 0;
 
+        /// <summary>
+        /// If the water is served with a lemon
+        /// </summary>
         public bool Lemon { get; set; } = false;
-
+        /// <summary>
+        /// Special instructions for preparing an order of water
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
