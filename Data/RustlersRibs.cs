@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-﻿/*
- * RustlersRibs.cs
- * Regan Hale
-=======
+
 ﻿/*RustlersRibs.cs
  * Author:Regan Hale
  * Purpose: represent the rustlers ribs entree at cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System.Collections.Generic;
 

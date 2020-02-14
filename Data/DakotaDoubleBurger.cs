@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-﻿/*
- * DakotaDoubleBurger.cs
- * Regan Hale
-=======
 ﻿/*DakotaDoubleBurger.cs
  * Author: Regan Hale
  * Purpose: to represent the DakotaDoubleBurger at the cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System;
 using System.Collections.Generic;

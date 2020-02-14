@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 ﻿/*
- * Trailburger.cs
- * Regan Hale
-=======
-﻿/*Trailburger.cs
+   *TrailBurger.cs
  * Author:Regan Hale
  * Purpose: represent the Trailburger entree at cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System.Collections.Generic;
 
@@ -15,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Trailburger entree
     /// </summary>
-    public class Trailburger: Entree
+    public class TrailBurger: Entree
     {
         private bool bun = true;
         /// <summary>

@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-﻿/*
- * AngryChicken.cs
- * Regan Hale
-=======
 ﻿/*AngryChicken.cs
  * Author:Regan Hale
  * Class: AngryChicken
  * Purpose: represent the Angry Chicken entree at cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System;
 using System.Collections.Generic;
