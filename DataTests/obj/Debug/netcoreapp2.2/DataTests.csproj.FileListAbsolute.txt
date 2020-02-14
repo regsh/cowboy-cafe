@@ -1,0 +1,16 @@
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.DataTests.deps.json
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.DataTests.runtimeconfig.json
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.DataTests.runtimeconfig.dev.json
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.DataTests.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.DataTests.pdb
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.Data.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp2.2\CowboyCafe.Data.pdb
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\DataTests.csprojAssemblyReference.cache
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\DataTests.AssemblyInfoInputs.cache
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\DataTests.AssemblyInfo.cs
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\DataTests.csproj.CopyComplete
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\CowboyCafe.DataTests.dll
+C:\Users\rshale\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp2.2\CowboyCafe.DataTests.pdb

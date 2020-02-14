@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "CowboyCafe.Data/1.0.0": {
+        "runtime": {
+          "CowboyCafe.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CowboyCafe.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
