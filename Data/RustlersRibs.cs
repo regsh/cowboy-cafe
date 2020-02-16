@@ -1,5 +1,5 @@
-
-﻿/*RustlersRibs.cs
+/*
+ * RustlersRibs.cs
  * Author:Regan Hale
  * Purpose: represent the rustlers ribs entree at cowboy cafe
  */
@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing Rustler's Ribs entree
     /// </summary>
-    public class RustlersRibs: Entree
+    public class RustlersRibs : Entree
     {
         /// <summary>
         /// The price of the ribs

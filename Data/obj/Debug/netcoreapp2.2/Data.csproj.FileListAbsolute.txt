@@ -5,4 +5,3 @@ C:\Users\rshale\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp2.2\Data.Assem
 C:\Users\rshale\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfo.cs
 C:\Users\rshale\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp2.2\CowboyCafe.Data.dll
 C:\Users\rshale\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp2.2\CowboyCafe.Data.pdb
-C:\Users\rshale\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache

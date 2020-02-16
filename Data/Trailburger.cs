@@ -1,5 +1,5 @@
 ﻿/*
-   *TrailBurger.cs
+ * TrailBurger.cs
  * Author:Regan Hale
  * Purpose: represent the Trailburger entree at cowboy cafe
  */
@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Trailburger entree
     /// </summary>
-    public class Trailburger: Entree
+    public class Trailburger : Entree
     {
         private bool bun = true;
         /// <summary>
@@ -81,7 +81,7 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
-        /// Caloric content of the trailburger
+        /// Caloric content of the TrailBurger
         /// </summary>
         public override uint Calories
         {

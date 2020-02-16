@@ -19,7 +19,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-        
         /// <summary>
         /// The price of the coffee
         /// </summary>

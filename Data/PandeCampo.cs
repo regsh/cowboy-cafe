@@ -4,15 +4,13 @@
  * Purpose: represent the pan de campo side at cowboy cafe
  */
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent the Pan de Campo side
     /// </summary>
-    public class PanDeCampo:Side
+    public class PanDeCampo : Side
     {
         /// <summary>
         /// Property to represent the price of the Pan de Campo

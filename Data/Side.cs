@@ -4,9 +4,6 @@
  * Edited by: Regan Hale
  * Purpose: Size base class from which sides at cowboy cafe are derived
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

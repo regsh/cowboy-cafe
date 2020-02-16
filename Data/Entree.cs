@@ -3,9 +3,7 @@
  * Purpose: Base class from which entrees at the cowboy cafe are derived
  * 2/5/2020
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

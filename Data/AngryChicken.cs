@@ -1,18 +1,17 @@
-﻿/*AngryChicken.cs
+﻿/*
+ * AngryChicken.cs
  * Author:Regan Hale
  * Class: AngryChicken
  * Purpose: represent the Angry Chicken entree at cowboy cafe
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent the Angry Chicken entree
     /// </summary>
-    public class AngryChicken: Entree
+    public class AngryChicken : Entree
     {
         private bool bread = true;
         /// <summary>
@@ -66,7 +65,7 @@ namespace CowboyCafe.Data
 
                 if (!bread) instructions.Add("hold bread");
                 if (!pickle) instructions.Add("hold pickle");
-                
+
                 return instructions;
             }
         }

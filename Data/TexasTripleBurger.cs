@@ -6,16 +6,14 @@
  * Purpose: represent the texas triple burger entree at cowboy cafe
 >>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent the Texas Triple Burger
     /// </summary>
-    public class TexasTripleBurger: Entree
+    public class TexasTripleBurger : Entree
     {
         private bool bun = true;
         /// <summary>

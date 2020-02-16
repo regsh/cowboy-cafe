@@ -1,17 +1,16 @@
-﻿/*DakotaDoubleBurger.cs
+﻿/*
+ * DakotaDoubleBurger.cs
  * Author: Regan Hale
  * Purpose: to represent the DakotaDoubleBurger at the cowboy cafe
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent the Dakota Double Burger
     /// </summary>
-    public class DakotaDoubleBurger: Entree
+    public class DakotaDoubleBurger : Entree
     {
         private bool bun = true;
         /// <summary>
@@ -85,7 +84,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Lettuce
         {
-            get { return lettuce; 
+            get
+            {
+                return lettuce;
             }
             set { lettuce = value; }
         }
@@ -95,7 +96,9 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Mayo
         {
-            get { return mayo; 
+            get
+            {
+                return mayo;
             }
             set { mayo = value; }
         }
@@ -133,7 +136,7 @@ namespace CowboyCafe.Data
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
                 if (!bun) instructions.Add("hold bun");
- 
+
                 return instructions;
             }
         }

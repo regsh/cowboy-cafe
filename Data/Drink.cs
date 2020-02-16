@@ -1,10 +1,9 @@
 ﻿/*
  * Drink.cs
  * Author:Regan Hale
+ * Purpose: Base class for foundation of drink orders at the cowboy cafe
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

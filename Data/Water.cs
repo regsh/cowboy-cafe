@@ -3,9 +3,7 @@
  * Author:Regan Hale
  * Public class to represent an order of Water at the Cowboy Cafe
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {

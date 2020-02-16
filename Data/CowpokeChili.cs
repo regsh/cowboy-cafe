@@ -10,7 +10,6 @@
  * Purpose: represent the cowpoke chili at the cowboy cafe
 >>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
-using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -18,7 +17,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili: Entree
+    public class CowpokeChili : Entree
     {
         private bool cheese = true;
         /// <summary>

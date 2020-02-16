@@ -3,9 +3,6 @@
  * Author:Regan Hale
  * Enum to represent the flavor options for soda Drink
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -16,7 +13,7 @@ namespace CowboyCafe.Data
     {
         CreamSoda,
         OrangeSoda,
-        Sarsaparailla,
+        Sarsparilla,
         BirchBeer,
         RootBeer
     }

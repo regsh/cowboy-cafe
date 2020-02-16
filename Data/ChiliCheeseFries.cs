@@ -6,8 +6,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -36,7 +34,8 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property to represent the caloric content of the Chili Cheese Fries
         /// </summary>
-        public override uint Calories {
+        public override uint Calories
+        {
             get
             {
                 switch (Size)
@@ -49,7 +48,7 @@ namespace CowboyCafe.Data
                         return 433;
                     default:
                         throw new NotImplementedException("Unknown size");
-                        
+
                 }
             }
         }

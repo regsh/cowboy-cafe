@@ -5,7 +5,6 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -49,13 +48,13 @@ namespace CowboyCafe.Data
                 uint kCals;
                 switch (Size)
                 {
-                    case (Size.Small): 
+                    case (Size.Small):
                         kCals = 10;
                         break;
-                    case (Size.Medium): 
+                    case (Size.Medium):
                         kCals = 22;
                         break;
-                    case (Size.Large): 
+                    case (Size.Large):
                         kCals = 36;
                         break;
                     default: throw new ArgumentException();
@@ -67,7 +66,8 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the tea
         /// </summary>
-        public override List<string> SpecialInstructions {
+        public override List<string> SpecialInstructions
+        {
             get
             {
                 List<string> instructions = new List<string>();
@@ -77,6 +77,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        
+
     }
 }

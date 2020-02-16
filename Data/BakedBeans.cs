@@ -5,8 +5,6 @@
  * Purpose: Represent the Baked Beans side at cowboy cafe
  */
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
