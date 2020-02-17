@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="PointOfSale.OrderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources> <!--Define resources within this control-->
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+           <!-- <ColumnDefinition Width="2*"/> makes twice as large as the otherwise available space-->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.3*"/>
+            
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column= "0">
+            <TextBlock >  Entrees </TextBlock>
+            <Button Name="AngryChickenOrderBtn">Angry Chicken</Button> <!--names need to be unique-->
+            <Button Name="CowpokeChiliOrderBtn">Cowpoke Chili</Button>
+            <Button Name="DakotaDoubleBurgerOrderBtn">Dakota Double Burger</Button>
+            <Button Name="PecosPulledPorkOrderBtn">Pecos Pulled Pork</Button>
+            <Button Name="RustersRibsOrderBtn">Rustler's Ribs</Button>
+            <Button Name="TexasTripleBurgerOrderBtn">Texas Triple Burger</Button>
+            <Button Name="TrailBurgerOrderBtn">Trail Burger</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock>Sides </TextBlock>
+            <Button Name="CornDodgersOrderBtn">Corn Dodgers</Button>
+            <!--names need to be unique-->
+            <Button Name="BakedBeansOrderBtn">Baked Beans</Button>
+            <Button Name="ChiliCheeseFriesOrderBtn">Chili Cheese Fries</Button>
+            <Button Name="PanDeCampoOrderBtn">Pan de Campo</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBlock> Drinks  </TextBlock>
+            <Button Name="CowbowCoffeeOrderBtn">Cowboy Coffee</Button>
+            <!--names need to be unique-->
+            <Button Name="JerkedSodaOrderBtn">Jerked Soda</Button>
+            <Button Name="TexasTeaOrderBtn">Texas Tea</Button>
+            <Button Name="WaterOrderBtn">Water</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="3">
+            <TextBlock >Order Summary</TextBlock>
+            <ListView Height="427">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </StackPanel>
+       
+        <!--  <Grid.RowDefinitions> 
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions> -->
+    </Grid>
+</UserControl>
