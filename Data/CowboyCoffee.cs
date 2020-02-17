@@ -20,6 +20,11 @@ namespace CowboyCafe.Data
         public bool RoomForCream { get; set; } = false;
 
         /// <summary>
+        /// Whether the coffee is served with ice
+        /// </summary>
+        public override bool Ice { get; set; } = false;
+
+        /// <summary>
         /// The price of the coffee
         /// </summary>
         public override double Price
