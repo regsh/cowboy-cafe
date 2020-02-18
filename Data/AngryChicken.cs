@@ -69,5 +69,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// Changes the default behavior of ToString() to give the title of the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
     }
 }
