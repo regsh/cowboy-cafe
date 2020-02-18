@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources> <!--Define resources within this control-->
         <Style TargetType="Button">
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="10"/>
         </Style>
         <Style TargetType="TextBlock">
@@ -28,7 +28,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column= "0">
             <TextBlock >  Entrees </TextBlock>
-            <Button Name="AngryChickenOrderBtn">Angry Chicken</Button> <!--names need to be unique-->
+            <Button Name="AngryChickenOrderBtn" Click="AngryChickenOrderBtn_Click">Angry Chicken</Button> <!--names need to be unique-->
             <Button Name="CowpokeChiliOrderBtn">Cowpoke Chili</Button>
             <Button Name="DakotaDoubleBurgerOrderBtn">Dakota Double Burger</Button>
             <Button Name="PecosPulledPorkOrderBtn">Pecos Pulled Pork</Button>
@@ -54,7 +54,7 @@
         </StackPanel>
         <StackPanel Grid.Column="3">
             <TextBlock >Order Summary</TextBlock>
-            <ListView Height="427">
+            <ListView Height="427" Name ="OrderListView">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>

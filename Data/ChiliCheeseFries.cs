@@ -58,7 +58,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.EnumStrings(Size) + " Chili Cheese Fries";
+            return EnumHandler.SizeString(Size) + " Chili Cheese Fries";
         }
     }
 }

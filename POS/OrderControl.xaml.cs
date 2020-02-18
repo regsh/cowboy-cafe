@@ -21,6 +21,13 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+            
+        }
+
+        private void AngryChickenOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CowboyCafe.Data.AngryChicken AC = new CowboyCafe.Data.AngryChicken();
+            OrderListView.Items.Add(AC);
         }
     }
 }
