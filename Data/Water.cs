@@ -40,5 +40,13 @@ namespace CowboyCafe.Data
             }
 
         }
+        /// <summary>
+        /// Returns a description of the drink with size as a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return EnumHandler.SizeString(Size) + " Water";
+        }
     }
 }

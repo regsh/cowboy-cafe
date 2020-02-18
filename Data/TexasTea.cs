@@ -76,6 +76,15 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// Returns a description of the drink including size as a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return EnumHandler.SizeString(Size) + " Texas Tea";
+            
+        }
 
 
     }

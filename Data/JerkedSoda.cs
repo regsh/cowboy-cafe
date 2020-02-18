@@ -62,5 +62,34 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// Returns the size and flavor and name of the jerked soda as a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string result = EnumHandler.SizeString(Size);
+            switch (Flavor)
+            {
+                case (SodaFlavor.CreamSoda):
+                    result += " Cream Soda";
+                    break;
+                case (SodaFlavor.BirchBeer):
+                    result += " Birch Beer";
+                    break;
+                case (SodaFlavor.OrangeSoda):
+                    result += " Orange Soda";
+                    break;
+                case (SodaFlavor.RootBeer):
+                    result += " Root Beer";
+                    break;
+                case (SodaFlavor.Sarsparilla):
+                    result += " Sarsparilla";
+                    break;
+                default: throw new ArgumentException();
+            }
+            result += " Jerked Soda";
+            return result;
+        }
     }
 }

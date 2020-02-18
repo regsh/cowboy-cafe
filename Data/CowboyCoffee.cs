@@ -70,5 +70,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public override string ToString()
+        {
+            string result = EnumHandler.EnumStrings(Size);
+            if (Decaf) result += " Decaf";
+            result += " Cowboy Coffee";
+            return result;
+        }
     }
 }
