@@ -82,8 +82,11 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Texas Tea";
-            
+            string result = Size.ToString();
+            if (Sweet) result += " Sweet";
+            else result += " Unsweet";
+            result += " Texas Tea";
+            return result;
         }
 
 

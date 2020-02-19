@@ -46,7 +46,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Water";
+            return Size.ToString() + " Water";
         }
     }
 }

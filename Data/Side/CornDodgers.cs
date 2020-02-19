@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Corn Dodgers";
+            return Size.ToString() + " Corn Dodgers";
         }
     }
 }

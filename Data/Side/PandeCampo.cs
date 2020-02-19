@@ -58,7 +58,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Pan de Campo";
+            return Size.ToString() + " Pan de Campo";
         }
     }
 }

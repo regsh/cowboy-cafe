@@ -73,7 +73,7 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            string result = EnumHandler.SizeString(Size);
+            string result = Size.ToString();
             if (Decaf) result += " Decaf";
             result += " Cowboy Coffee";
             return result;
