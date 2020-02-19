@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CowboyCafe.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PointOfSale
 {
@@ -28,6 +20,22 @@ namespace PointOfSale
         {
             CowboyCafe.Data.AngryChicken AC = new CowboyCafe.Data.AngryChicken();
             OrderListView.Items.Add(AC);
+        }
+
+        private void RustersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new RustlersRibs());
+        }
+
+        private void CowpokeChiliOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CowboyCafe.Data.CowpokeChili CC = new CowboyCafe.Data.CowpokeChili();
+            OrderListView.Items.Add(CC);
+        }
+
+        private void ChiliCheeseFriesOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new ChiliCheeseFries());
         }
     }
 }
