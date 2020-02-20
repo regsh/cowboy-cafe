@@ -9,7 +9,7 @@
     <UserControl.Resources> <!--Define resources within this control-->
         <Style TargetType="Button">
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
@@ -29,37 +29,48 @@
         <StackPanel Grid.Column= "0">
             <TextBlock >  Entrees </TextBlock>
             <Button Name="AngryChickenOrderBtn" Click="AngryChickenOrderBtn_Click">Angry Chicken</Button> <!--names need to be unique-->
-            <Button Name="CowpokeChiliOrderBtn">Cowpoke Chili</Button>
-            <Button Name="DakotaDoubleBurgerOrderBtn">Dakota Double Burger</Button>
-            <Button Name="PecosPulledPorkOrderBtn">Pecos Pulled Pork</Button>
-            <Button Name="RustersRibsOrderBtn">Rustler's Ribs</Button>
-            <Button Name="TexasTripleBurgerOrderBtn">Texas Triple Burger</Button>
-            <Button Name="TrailBurgerOrderBtn">Trail Burger</Button>
+            <Button Name="CowpokeChiliOrderBtn" Click="CowpokeChiliOrderBtn_Click">Cowpoke Chili</Button>
+            <Button Name="DakotaDoubleBurgerOrderBtn" Click="DakotaDoubleBurgerOrderBtn_Click">Dakota Double Burger</Button>
+            <Button Name="PecosPulledPorkOrderBtn" Click="PecosPulledPorkOrderBtn_Click">Pecos Pulled Pork</Button>
+            <Button Name="RustersRibsOrderBtn" Click="RustersRibsOrderBtn_Click">Rustler's Ribs</Button>
+            <Button Name="TexasTripleBurgerOrderBtn" Click="TexasTripleBurgerOrderBtn_Click">Texas Triple Burger</Button>
+            <Button Name="TrailBurgerOrderBtn" Click="TrailBurgerOrderBtn_Click">Trail Burger</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
+            
             <TextBlock>Sides </TextBlock>
-            <Button Name="CornDodgersOrderBtn">Corn Dodgers</Button>
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0">S</Button>
+                <Button Grid.Column="1">M</Button>
+                <Button Grid.Column="2">L</Button>
+            </Grid>
+            <Button Name="CornDodgersOrderBtn" Click="CornDodgersOrderBtn_Click">Corn Dodgers</Button>
             <!--names need to be unique-->
-            <Button Name="BakedBeansOrderBtn">Baked Beans</Button>
-            <Button Name="ChiliCheeseFriesOrderBtn">Chili Cheese Fries</Button>
-            <Button Name="PanDeCampoOrderBtn">Pan de Campo</Button>
+            <Button Name="BakedBeansOrderBtn" Click="BakedBeansOrderBtn_Click">Baked Beans</Button>
+            <Button Name="ChiliCheeseFriesOrderBtn" Click="ChiliCheeseFriesOrderBtn_Click">Chili Cheese Fries</Button>
+            <Button Name="PanDeCampoOrderBtn" Click="PanDeCampoOrderBtn_Click">Pan de Campo</Button>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock> Drinks  </TextBlock>
-            <Button Name="CowbowCoffeeOrderBtn">Cowboy Coffee</Button>
+            <Grid Height="50">
+                
+            </Grid>
+    <Button Name="CowbowCoffeeOrderBtn" Click="CowboyCoffeeOrderBtn_Click">Cowboy Coffee</Button>
             <!--names need to be unique-->
-            <Button Name="JerkedSodaOrderBtn">Jerked Soda</Button>
-            <Button Name="TexasTeaOrderBtn">Texas Tea</Button>
-            <Button Name="WaterOrderBtn">Water</Button>
+            <Button Name="JerkedSodaOrderBtn" Click="JerkedSodaOrderBtn_Click">Jerked Soda</Button>
+            <Button Name="TexasTeaOrderBtn" Click="TexasTeaOrderBtn_Click">Texas Tea</Button>
+            <Button Name="WaterOrderBtn" Click="WaterOrderBtn_Click">Water</Button>
         </StackPanel>
         <StackPanel Grid.Column="3">
             <TextBlock >Order Summary</TextBlock>
-            <ListView Height="427" Name ="OrderListView">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
+            <ListView Height="427" Name ="OrderListView" FontSize="12" FontWeight="Normal">
+                
             </ListView>
 
         </StackPanel>

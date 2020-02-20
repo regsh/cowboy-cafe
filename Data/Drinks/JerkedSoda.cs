@@ -68,7 +68,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string result = EnumHandler.SizeString(Size);
+            string result = Size.ToString();
             switch (Flavor)
             {
                 case (SodaFlavor.CreamSoda):

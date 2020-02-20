@@ -1,19 +1,21 @@
 ﻿/*
- * PanDeCampo.cs
+ * CornDodgers.cs
  * Author:Regan Hale
- * Purpose: represent the pan de campo side at cowboy cafe
+ * Class: CornDodgers
+ * Purpose: represent the corn dodgers side at the cowboy cafe
  */
+
 using System;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to represent the Pan de Campo side
+    /// Class to represent the Corn Dodgers side at the Cowboy Cafe
     /// </summary>
-    public class PanDeCampo : Side
+    public class CornDodgers : Side
     {
         /// <summary>
-        /// Property to represent the price of the Pan de Campo
+        /// Property to represent the price of the corn dodgers
         /// </summary>
         public override double Price
         {
@@ -33,7 +35,7 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
-        /// Property to represent the caloric content of the Pan de Campo
+        /// Property to represent the caloric content of the corn dodgers
         /// </summary>
         public override uint Calories
         {
@@ -42,13 +44,14 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 367;
+                        return 717;
                     case Size.Medium:
-                        return 269;
+                        return 685;
                     case Size.Small:
-                        return 227;
+                        return 512;
                     default:
                         throw new NotImplementedException("Unknown size");
+
                 }
             }
         }
@@ -58,7 +61,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Pan de Campo";
+            return Size.ToString() + " Corn Dodgers";
         }
     }
 }

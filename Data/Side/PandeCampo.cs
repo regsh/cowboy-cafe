@@ -1,8 +1,7 @@
 ﻿/*
- * BakedBeans.cs
+ * PanDeCampo.cs
  * Author:Regan Hale
- * Class:BakedBeans
- * Purpose: Represent the Baked Beans side at cowboy cafe
+ * Purpose: represent the pan de campo side at cowboy cafe
  */
 using System;
 
@@ -11,10 +10,10 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class to represent the Pan de Campo side
     /// </summary>
-    public class BakedBeans : Side
+    public class PanDeCampo : Side
     {
         /// <summary>
-        /// Property to represent the price of the Baked Beans
+        /// Property to represent the price of the Pan de Campo
         /// </summary>
         public override double Price
         {
@@ -34,7 +33,7 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
-        /// Property to represent the caloric content of the Baked Beans
+        /// Property to represent the caloric content of the Pan de Campo
         /// </summary>
         public override uint Calories
         {
@@ -43,34 +42,23 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 410;
+                        return 367;
                     case Size.Medium:
-                        return 378;
+                        return 269;
                     case Size.Small:
-                        return 312;
+                        return 227;
                     default:
                         throw new NotImplementedException("Unknown size");
                 }
             }
         }
         /// <summary>
-        /// Returns string with description of the side with size
+        /// Returns the size and name of the side as a string
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Large:
-                    return "Large Baked Beans";
-                case Size.Medium:
-                    return "Medium Baked Beans";
-                case Size.Small:
-                    return "Small Baked Beans";
-                default:
-                    throw new NotImplementedException("Unknown size");
-            }
-
+            return Size.ToString() + " Pan de Campo";
         }
     }
 }

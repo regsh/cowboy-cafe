@@ -1,21 +1,20 @@
 ﻿/*
- * CornDodgers.cs
+ * BakedBeans.cs
  * Author:Regan Hale
- * Class: CornDodgers
- * Purpose: represent the corn dodgers side at the cowboy cafe
+ * Class:BakedBeans
+ * Purpose: Represent the Baked Beans side at cowboy cafe
  */
-
 using System;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to represent the Corn Dodgers side at the Cowboy Cafe
+    /// Class to represent the Pan de Campo side
     /// </summary>
-    public class CornDodgers : Side
+    public class BakedBeans : Side
     {
         /// <summary>
-        /// Property to represent the price of the corn dodgers
+        /// Property to represent the price of the Baked Beans
         /// </summary>
         public override double Price
         {
@@ -35,7 +34,7 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
-        /// Property to represent the caloric content of the corn dodgers
+        /// Property to represent the caloric content of the Baked Beans
         /// </summary>
         public override uint Calories
         {
@@ -44,24 +43,23 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 717;
+                        return 410;
                     case Size.Medium:
-                        return 685;
+                        return 378;
                     case Size.Small:
-                        return 512;
+                        return 312;
                     default:
                         throw new NotImplementedException("Unknown size");
-
                 }
             }
         }
         /// <summary>
-        /// Returns the size and name of the side as a string
+        /// Returns string with description of the side with size
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return EnumHandler.SizeString(Size) + " Corn Dodgers";
+            return Size.ToString() + " Baked Beans";
         }
     }
 }
