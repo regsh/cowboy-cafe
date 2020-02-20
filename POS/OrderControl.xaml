@@ -11,11 +11,13 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="5"/>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style x:Key="ColumnHeaderSyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="TextAlignment" Value="Center"/>
         </Style>
+        
+        
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -27,7 +29,7 @@
             
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column= "0">
-            <TextBlock >  Entrees </TextBlock>
+            <TextBlock Style="{StaticResource ColumnHeaderSyle}">  Entrees </TextBlock>
             <Button Name="AngryChickenOrderBtn" Click="AngryChickenOrderBtn_Click">Angry Chicken</Button> <!--names need to be unique-->
             <Button Name="CowpokeChiliOrderBtn" Click="CowpokeChiliOrderBtn_Click">Cowpoke Chili</Button>
             <Button Name="DakotaDoubleBurgerOrderBtn" Click="DakotaDoubleBurgerOrderBtn_Click">Dakota Double Burger</Button>
@@ -38,7 +40,7 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             
-            <TextBlock>Sides </TextBlock>
+            <TextBlock Style="{StaticResource ColumnHeaderSyle}">Sides </TextBlock>
             <Grid Height="50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -46,7 +48,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 
-                <Button Grid.Column="0">S</Button>
+                <Button Grid.Column="0" Background="Beige">S</Button>
                 <Button Grid.Column="1">M</Button>
                 <Button Grid.Column="2">L</Button>
             </Grid>
@@ -57,20 +59,20 @@
             <Button Name="PanDeCampoOrderBtn" Click="PanDeCampoOrderBtn_Click">Pan de Campo</Button>
         </StackPanel>
         <StackPanel Grid.Column="2">
-            <TextBlock> Drinks  </TextBlock>
-            <Grid Height="50">
-                
-            </Grid>
-    <Button Name="CowbowCoffeeOrderBtn" Click="CowboyCoffeeOrderBtn_Click">Cowboy Coffee</Button>
+            <TextBlock Style="{StaticResource ColumnHeaderSyle}"> Drinks  </TextBlock>
+            <GroupBox Name="SizeGroupBox" Height="40pt">
+                <RadioButton Name="SmlRadioBtn" 
+            </GroupBox>
+            <Button Name="CowbowCoffeeOrderBtn" Click="CowboyCoffeeOrderBtn_Click">Cowboy Coffee</Button>
             <!--names need to be unique-->
             <Button Name="JerkedSodaOrderBtn" Click="JerkedSodaOrderBtn_Click">Jerked Soda</Button>
             <Button Name="TexasTeaOrderBtn" Click="TexasTeaOrderBtn_Click">Texas Tea</Button>
             <Button Name="WaterOrderBtn" Click="WaterOrderBtn_Click">Water</Button>
+            
         </StackPanel>
         <StackPanel Grid.Column="3">
-            <TextBlock >Order Summary</TextBlock>
-            <ListView Height="427" Name ="OrderListView" FontSize="12" FontWeight="Normal">
-                
+            <TextBlock Style="{StaticResource ColumnHeaderSyle}">Order Summary</TextBlock>
+            <ListView Height="427" Name ="OrderListView" >
             </ListView>
 
         </StackPanel>
