@@ -16,6 +16,10 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="TextAlignment" Value="Center"/>
         </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="VerticalAlignment" Value="Center" ></Setter>
+            <Setter Property="Margin" Value="5pt"></Setter>
+        </Style>
         
         
     </UserControl.Resources>
@@ -60,9 +64,12 @@
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock Style="{StaticResource ColumnHeaderSyle}"> Drinks  </TextBlock>
-            <GroupBox Name="SizeGroupBox" Height="40pt">
-                <RadioButton Name="SmlRadioBtn" 
-            </GroupBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton IsChecked="True">Sml</RadioButton>
+                    <RadioButton>Med</RadioButton>
+                    <RadioButton>Lg</RadioButton>
+            </StackPanel>
+
             <Button Name="CowbowCoffeeOrderBtn" Click="CowboyCoffeeOrderBtn_Click">Cowboy Coffee</Button>
             <!--names need to be unique-->
             <Button Name="JerkedSodaOrderBtn" Click="JerkedSodaOrderBtn_Click">Jerked Soda</Button>
