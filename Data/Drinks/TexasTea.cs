@@ -82,10 +82,10 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string result = Size.ToString();
+            string result = Size.ToString() + " Texas";
             if (Sweet) result += " Sweet";
-            else result += " Unsweet";
-            result += " Texas Tea";
+            else result += " Plain";
+            result += " Tea";
             return result;
         }
 
