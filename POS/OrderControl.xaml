@@ -1,4 +1,7 @@
-﻿<UserControl x:Class="PointOfSale.OrderControl"
+﻿<!--OrderControl.xaml
+    Author: Regan Hale
+    Purpose: Defines design of controls on the POS software-->
+  <UserControl x:Class="PointOfSale.OrderControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -38,7 +41,7 @@
             <Button Name="CowpokeChiliOrderBtn" Click="CowpokeChiliOrderBtn_Click">Cowpoke Chili</Button>
             <Button Name="DakotaDoubleBurgerOrderBtn" Click="DakotaDoubleBurgerOrderBtn_Click">Dakota Double Burger</Button>
             <Button Name="PecosPulledPorkOrderBtn" Click="PecosPulledPorkOrderBtn_Click">Pecos Pulled Pork</Button>
-            <Button Name="RustersRibsOrderBtn" Click="RustersRibsOrderBtn_Click">Rustler's Ribs</Button>
+            <Button Name="RustersRibsOrderBtn" Click="RustlersRibsOrderBtn_Click">Rustler's Ribs</Button>
             <Button Name="TexasTripleBurgerOrderBtn" Click="TexasTripleBurgerOrderBtn_Click">Texas Triple Burger</Button>
             <Button Name="TrailBurgerOrderBtn" Click="TrailBurgerOrderBtn_Click">Trail Burger</Button>
         </StackPanel>

@@ -1,4 +1,10 @@
-﻿using CowboyCafe.Data;
+﻿/*
+ * OrderControl.xaml.cs
+ * Author:Regan Hale
+ * Purpose: Defines behavior of the point-of-sale program for the Cowboy Cafe
+ */
+
+using CowboyCafe.Data;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -40,7 +46,7 @@ namespace PointOfSale
             OrderListView.Items.Add(new PecosPulledPork());
         }
 
-        private void RustersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
+        private void RustlersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new RustlersRibs());
         }
