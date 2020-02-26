@@ -17,7 +17,7 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact] //In Xunit, a fact is a test that expects no parameters
-        public void ShouldBeAbleTOAddItems() //this name "ShouldBe..." is called a spec. In Xunit it becomes a function name
+        public void ShouldBeAbleToAddItems() //this name "ShouldBe..." is called a spec. In Xunit it becomes a function name
         {
             var order = new Order();
             var item = new MockOrderItem();
@@ -78,5 +78,31 @@ namespace CowboyCafe.DataTests
 
 
         }
+        [Theory] //could theoretically add an assert for Remove, but ideally each test tests precisely one function
+        [InlineData("Price")]
+        [InlineData("Items")]
+        public void AddingItemShouldTriggerPropertyChanged(string propertyName)
+        {
+            var order = new Order();
+            var item = new MockOrderItem();
+            Assert.PropertyChanged(order, propertyName, () =>
+            {
+                order.Add(item);
+            });
+        }
+
+        [Theory] 
+        [InlineData("Price")]
+        [InlineData("Items")]
+        public void RemovingItemShouldTriggerPropertyChanged(string propertyName)
+        {
+            var order = new Order();
+            var item = new MockOrderItem();
+            Assert.PropertyChanged(order, propertyName, () =>
+            {
+                order.Remove(item);
+            });
+        }
+
     }
 }
