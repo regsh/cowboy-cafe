@@ -13,7 +13,7 @@ namespace CowboyCafe.DataTests
         {
             public List<string> SpecialInstructions { get; set; }
 
-            public double Price {get;set;}
+            public double Price { get; set; } = 0;
         }
 
         [Fact] //In Xunit, a fact is a test that expects no parameters
