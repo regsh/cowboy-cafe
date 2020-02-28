@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     ///Abstract class to represent a generic drink at the Cowboy Cafe
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink:IOrderItem
     {
         /// <summary>
         /// Represents the size of the drink, default of small

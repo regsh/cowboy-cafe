@@ -98,6 +98,7 @@ namespace CowboyCafe.DataTests
         {
             var order = new Order();
             var item = new MockOrderItem();
+            order.Add(item);
             Assert.PropertyChanged(order, propertyName, () =>
             {
                 order.Remove(item);

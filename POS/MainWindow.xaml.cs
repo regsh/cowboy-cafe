@@ -5,6 +5,7 @@
  */
 
 using System.Windows;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -16,6 +17,9 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent(); //ALWAYS leave this in place. Draws from xaml file to render content
+
+            var data = new Order();
+            this.DataContext = data;
         }
     }
 }
