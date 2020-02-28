@@ -1,7 +1,7 @@
 ﻿/*
  * MainWindow.xaml.cs
  * Author:Regan Hale
- * Purpose: Defines behavior for the main window which contains the OrderControl for the CowboyCafe POS
+ * Purpose: Defines behavior for the main window which contains the MenuItemSelectionControl for the CowboyCafe POS
  */
 
 using System.Windows;

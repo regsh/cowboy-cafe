@@ -1,5 +1,5 @@
 ﻿/*
- * OrderControl.xaml.cs
+ * MenuItemSelectionControl.xaml.cs
  * Author:Regan Hale
  * Purpose: Defines behavior of the point-of-sale program for the Cowboy Cafe
  */
@@ -12,11 +12,11 @@ using System.Windows.Controls;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class MenuItemSelectionControl : UserControl
     {
-        public OrderControl()
+        public MenuItemSelectionControl()
         {
             InitializeComponent();
             
@@ -26,83 +26,106 @@ namespace PointOfSale
 
         private void AngryChickenOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new AngryChicken());
+            
+            if(DataContext is Order myOrder)
+            {
+                myOrder.Add(new AngryChicken());
+            }
         }
 
 
         private void CowpokeChiliOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowpokeChili());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new CowpokeChili());
+            }
         }
 
 
         private void DakotaDoubleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new DakotaDoubleBurger());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new DakotaDoubleBurger());
+            }
         }
 
         private void PecosPulledPorkOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PecosPulledPork());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new PecosPulledPork());
+            }
         }
 
         private void RustlersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new RustlersRibs());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new RustlersRibs());
+            }
         }
 
         private void TexasTripleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTripleBurger());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new TexasTripleBurger());
+            }
         }
 
         private void TrailBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Trailburger());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new Trailburger());
+            }
         }
 
         //CLICK EVENT HANDLERS FOR SIDES
-
+        
         private void BakedBeansOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new BakedBeans());
+           // OrderListView.Items.Add(new BakedBeans());
         }
 
         private void ChiliCheeseFriesOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new ChiliCheeseFries());
+            //OrderListView.Items.Add(new ChiliCheeseFries());
         }
 
         private void CornDodgersOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CornDodgers());
+            //OrderListView.Items.Add(new CornDodgers());
         }
 
         private void PanDeCampoOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new PanDeCampo());
+           // OrderListView.Items.Add(new PanDeCampo());
         }
 
         //CLICK EVENT HANDLERS FOR DRINKS
 
         private void CowboyCoffeeOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowboyCoffee());
+           // OrderListView.Items.Add(new CowboyCoffee());
         }
 
         private void JerkedSodaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new JerkedSoda());
+            //OrderListView.Items.Add(new JerkedSoda());
         }
 
         private void TexasTeaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new TexasTea());
+            //OrderListView.Items.Add(new TexasTea());
         }
 
         private void WaterOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Water());
+          //  OrderListView.Items.Add(new Water());
         }
+        
     }
 }
