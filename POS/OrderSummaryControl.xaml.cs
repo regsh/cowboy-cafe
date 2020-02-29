@@ -23,12 +23,6 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
-
-
-
-            
         }
-
-        
     }
 }

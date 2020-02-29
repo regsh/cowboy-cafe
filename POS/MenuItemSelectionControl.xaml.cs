@@ -87,44 +87,68 @@ namespace PointOfSale
         
         private void BakedBeansOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-           // OrderListView.Items.Add(new BakedBeans());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new BakedBeans());
+            }
         }
 
         private void ChiliCheeseFriesOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            //OrderListView.Items.Add(new ChiliCheeseFries());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new ChiliCheeseFries());
+            }
         }
 
         private void CornDodgersOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            //OrderListView.Items.Add(new CornDodgers());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new CornDodgers());
+            }
         }
 
         private void PanDeCampoOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-           // OrderListView.Items.Add(new PanDeCampo());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new PanDeCampo());
+            }
         }
 
         //CLICK EVENT HANDLERS FOR DRINKS
 
         private void CowboyCoffeeOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-           // OrderListView.Items.Add(new CowboyCoffee());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new CowboyCoffee()) ;
+            }
         }
 
         private void JerkedSodaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            //OrderListView.Items.Add(new JerkedSoda());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new JerkedSoda());
+            }
         }
 
         private void TexasTeaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            //OrderListView.Items.Add(new TexasTea());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new TexasTea());
+            }
         }
 
         private void WaterOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-          //  OrderListView.Items.Add(new Water());
+            if (DataContext is Order myOrder)
+            {
+                myOrder.Add(new Water());
+            }
         }
         
     }

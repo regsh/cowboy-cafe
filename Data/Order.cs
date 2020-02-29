@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
@@ -13,9 +14,7 @@ namespace CowboyCafe.Data
 
         public double Subtotal { get; private set; }
 
-        private List<IOrderItem> items = new List<IOrderItem>();
-
-        public List<IOrderItem> Items { get => items; }
+        public ObservableCollection<IOrderItem> Items { get; } = new ObservableCollection<IOrderItem>();
 
         public event PropertyChangedEventHandler PropertyChanged; //this is the only "requirement" to implement INotifyPropertyChanged BUT, *SHOULD*** invoke when any properties are changed
 
