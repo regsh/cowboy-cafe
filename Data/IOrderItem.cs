@@ -1,9 +1,16 @@
-﻿using System;
+﻿/*
+ * IOrderItem.cs
+ * Author: Regan Hale
+ * Purpose: Interface to to allow for a collection of items ordered at the CowboyCafe
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    //Iterface to allow for a collection of menu items with similar functionality
     public interface IOrderItem
     {
         //Interfaces cannot have fields, but Properties are acceptable

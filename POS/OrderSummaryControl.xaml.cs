@@ -1,16 +1,11 @@
-﻿using CowboyCafe.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿/*
+ * OrderSummaryControl.xaml.cs
+ * Author:Regan Hale
+ * Purpose: To provide a means of viewing the current order in the POS inteface
+ */
+
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PointOfSale
 {
@@ -23,10 +18,6 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
-
-
         }
-
-       
     }
 }

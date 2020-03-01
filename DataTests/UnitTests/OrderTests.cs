@@ -1,4 +1,10 @@
-﻿using CowboyCafe.Data;
+﻿/*
+ * OrderTests.cs
+ * Author:Regan Hale
+ * Purpose: To test functionality of the Order class
+ */
+
+using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -79,7 +85,7 @@ namespace CowboyCafe.DataTests
 
         }
         [Theory] //could theoretically add an assert for Remove, but ideally each test tests precisely one function
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void AddingItemShouldTriggerPropertyChanged(string propertyName)
         {
@@ -92,7 +98,7 @@ namespace CowboyCafe.DataTests
         }
 
         [Theory] 
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void RemovingItemShouldTriggerPropertyChanged(string propertyName)
         {
