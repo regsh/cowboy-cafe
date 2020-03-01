@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
 {
     public class Order:INotifyPropertyChanged
     {
-        private static uint lastOrderNumber = 0;
+        private static uint lastOrderNumber;
 
         public uint OrderNumber { get; }
 
