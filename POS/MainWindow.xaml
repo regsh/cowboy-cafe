@@ -16,6 +16,6 @@
             <ColumnDefinition Width="0.4*"/>
         </Grid.ColumnDefinitions>
         <local:MenuItemSelectionControl x:Name="uxMenuItemSelection" Grid.Column="0"/>
-            <local:OrderSummaryControl x:Name="uxOrderSummary" Grid.Column="1"/> 
+        <local:OrderSummaryControl x:Name="uxOrderSummary" Grid.Column="1"/> 
     </Grid>
 </Window>

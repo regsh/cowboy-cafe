@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
 {
     public class Order:INotifyPropertyChanged
     {
-        private static uint lastOrderNumber;
+        private static uint lastOrderNumber = 0;
 
         public uint OrderNumber { get; }
 
@@ -20,8 +20,7 @@ namespace CowboyCafe.Data
 
         public Order()
         {
-            //DOES THIS INCREMENT lastOrderNumber?
-            OrderNumber = lastOrderNumber++;
+            OrderNumber = ++lastOrderNumber;
         }
 
         public void Add(IOrderItem item)
@@ -29,7 +28,7 @@ namespace CowboyCafe.Data
             Items.Add(item);
             Subtotal += item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items")); //still don't really understand why there is a null ref. exception when no listener
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
         public void Remove(IOrderItem item)
@@ -37,7 +36,12 @@ namespace CowboyCafe.Data
             Items.Remove(item);
             Subtotal -= item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        public override string ToString()
+        {
+            return $"Order {OrderNumber}";
         }
 
 
