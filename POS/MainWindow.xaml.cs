@@ -18,8 +18,7 @@ namespace PointOfSale
         {
             InitializeComponent(); //ALWAYS leave this in place. Draws from xaml file to render content
 
-            var data = new Order();
-            this.DataContext = data;
+            
         }
     }
 }
