@@ -50,17 +50,7 @@
         <StackPanel Grid.Column="1">
             
             <TextBlock Style="{StaticResource ColumnHeaderSyle}">Sides </TextBlock>
-            <Grid Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    
-                </Grid.ColumnDefinitions>
-                
-                <Button Grid.Column="0" Background="Beige">S</Button>
-                <Button Grid.Column="1">M</Button>
-                <Button Grid.Column="2">L</Button>
-            </Grid>
+            
             <Button Name="CornDodgersOrderBtn" Click="CornDodgersOrderBtn_Click">Corn Dodgers</Button>
             <!--names need to be unique-->
             <Button Name="BakedBeansOrderBtn" Click="BakedBeansOrderBtn_Click">Baked Beans</Button>
