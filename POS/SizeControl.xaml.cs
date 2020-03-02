@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CowboyCafe.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,50 @@ namespace PointOfSale
     /// </summary>
     public partial class SizeControl : UserControl
     {
-        public SizeControl()
+        private IOrderItem itemToCustomize;
+
+        public SizeControl(IOrderItem item)
         {
             InitializeComponent();
+            itemToCustomize = item;
+        }
+
+        void SmallBtn_Click(object sender, EventArgs e)
+        {
+            if(itemToCustomize is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Small;
+                if(this.DataContext is Order order)
+                {
+                    order.Add(side);
+                }
+                
+            }
+        }
+
+        void MediumBtn_Click(object sender, EventArgs e)
+        {
+            if (itemToCustomize is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Medium;
+                if (this.DataContext is Order order)
+                {
+                    order.Add(side);
+                }
+            }
+        }
+
+        void LargeBtn_Click(object sender, EventArgs e)
+        {
+            if (itemToCustomize is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Large;
+                if (this.DataContext is Order order)
+                {
+                    order.Add(side);
+                }
+            }
+            
         }
     }
 }

@@ -32,5 +32,10 @@ namespace PointOfSale
             this.DataContext = new Order();
 
         }
+
+        public void ItemSelectionBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

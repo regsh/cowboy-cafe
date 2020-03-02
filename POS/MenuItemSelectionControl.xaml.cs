@@ -29,8 +29,8 @@ namespace PointOfSale
             
             if(DataContext is Order myOrder)
             {
-                Window selectSize = new SizeSelection();
-                selectSize.Show();
+                //Window selectSize = new SizeSelection();
+               // selectSize.Show();
 
                 myOrder.Add(new AngryChicken());
             }
@@ -92,7 +92,10 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
-                myOrder.Add(new BakedBeans());
+                BakedBeans bb = new BakedBeans();
+                //myOrder.Add(bb);
+                CustomizationBorder.Child = new SizeControl(bb);
+                
             }
         }
 

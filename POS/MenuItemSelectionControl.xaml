@@ -26,15 +26,13 @@
         
         
     </UserControl.Resources>
+    <StackPanel>
     <Grid>
         <Grid.ColumnDefinitions>
-           <!-- <ColumnDefinition Width="2*"/> makes twice as large as the otherwise available space-->
+            <!-- <ColumnDefinition Width="2*"/> makes twice as large as the otherwise available space-->
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
-
-
 
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column= "0">
@@ -83,4 +81,8 @@
 
 
     </Grid>
+        <Border Name="CustomizationBorder">
+            
+        </Border>
+    </StackPanel>
 </UserControl>
