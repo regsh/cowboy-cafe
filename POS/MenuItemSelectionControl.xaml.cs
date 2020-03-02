@@ -29,6 +29,9 @@ namespace PointOfSale
             
             if(DataContext is Order myOrder)
             {
+                Window selectSize = new SizeSelection();
+                selectSize.Show();
+
                 myOrder.Add(new AngryChicken());
             }
         }
