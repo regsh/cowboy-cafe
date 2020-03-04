@@ -5,6 +5,7 @@
  */
 using CowboyCafe.Data;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 
 
@@ -35,7 +36,12 @@ namespace PointOfSale
 
         public void ItemSelectionBtn_Click(object sender, EventArgs e)
         {
+            CustomizationContainer.Child = new MenuItemSelectionControl();
+        }
 
+        public void SwapScreen(FrameworkElement element)
+        {
+            CustomizationContainer.Child = element;
         }
     }
 }

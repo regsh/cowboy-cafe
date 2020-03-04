@@ -28,6 +28,9 @@
         </Grid>
         
         <!--MenuSelectionControl in center of dock panel-->
-        <local:MenuItemSelectionControl x:Name="uxMenuItemSelection" Margin="10"/>
+        <!--border to hold changing controls that allow for customization-->
+        <Border Name="CustomizationContainer">
+            <local:MenuItemSelectionControl x:Name="uxMenuItemSelection" Margin="10"/>
+        </Border>
     </DockPanel>
 </UserControl>

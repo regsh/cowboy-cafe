@@ -53,6 +53,7 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             Items.Add(item);
+           // if (item is INotifyPropertyChanged) { item.PropertyChanged += OnItemChanged; }//TAKE OUT IF STATEMENT WHEN ALL ITEMS IMPLEMENT THIS
             Subtotal += item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items")); //still don't really understand why there is a null ref. exception when no listener
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
@@ -68,6 +69,13 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
+
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if (e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+        }
+        
         /// <summary>
         /// Converts the order to a string containing the order number
         /// </summary>

@@ -7,6 +7,8 @@
 using CowboyCafe.Data;
 using System.Windows;
 using System.Windows.Controls;
+using PointOfSale.ExtensionMethods;
+using PointOfSale.CustomizationScreens;
 
 
 namespace PointOfSale
@@ -15,13 +17,19 @@ namespace PointOfSale
     /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
-    {
+    { 
+    
+       // OrderControl orderControl;
+
         public MenuItemSelectionControl()
         {
             InitializeComponent();
+            //orderControl = this.FindAncestor<OrderControl>();
             
         }
         
+
+
         //CLICK EVENT HANDLERS FOR ENTREES
 
         private void AngryChickenOrderBtn_Click(object sender, RoutedEventArgs e)
@@ -29,10 +37,12 @@ namespace PointOfSale
             
             if(DataContext is Order myOrder)
             {
-                //Window selectSize = new SizeSelection();
+               //Window selectSize = new SizeSelection();
                // selectSize.Show();
 
                 myOrder.Add(new AngryChicken());
+                
+                
             }
         }
 
@@ -41,7 +51,12 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
-                myOrder.Add(new CowpokeChili());
+                var orderControl = this.FindAncestor<OrderControl>();
+                var screen = new CustomizationScreens.CowpokeChiliCustomization();
+                var item = new CowpokeChili();
+                screen.DataContext = item;
+                myOrder.Add(item);
+                orderControl.SwapScreen(screen);
             }
         }
 
@@ -92,10 +107,10 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
-                BakedBeans bb = new BakedBeans();
-                //myOrder.Add(bb);
-                CustomizationBorder.Child = new SizeControl(bb);
+                var orderControl = this.FindAncestor<OrderControl>();
                 
+                //orderControl?.SwapScreen(new CustomizationScreens.SizeControl());
+                myOrder.Add(new BakedBeans());
             }
         }
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -17,6 +18,6 @@ namespace CowboyCafe.Data
         List<string> SpecialInstructions { get; }
 
         double Price { get; }
-
+        
     }
 }
