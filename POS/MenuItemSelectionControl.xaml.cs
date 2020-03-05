@@ -108,9 +108,20 @@ namespace PointOfSale
             if (DataContext is Order myOrder)
             {
                 var orderControl = this.FindAncestor<OrderControl>();
-                
-                //orderControl?.SwapScreen(new CustomizationScreens.SizeControl());
-                myOrder.Add(new BakedBeans());
+                var screen = new CustomizationScreens.SizeControl();
+                var item = new BakedBeans();
+                screen.DataContext = item;
+                myOrder.Add(item);
+                orderControl.SwapScreen(screen);
+
+                /*
+                var orderControl = this.FindAncestor<OrderControl>();
+                var screen = new CustomizationScreens.CowpokeChiliCustomization();
+                var item = new CowpokeChili();
+                screen.DataContext = item;
+                myOrder.Add(item);
+                orderControl.SwapScreen(screen); */
+
             }
         }
 
