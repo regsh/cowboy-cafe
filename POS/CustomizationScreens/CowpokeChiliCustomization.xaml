@@ -7,14 +7,25 @@
              xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="600">
-    <Grid>
-        <StackPanel>
-            <TextBlock FontSize="40">Customize the Chili</TextBlock>
+
+    <StackPanel>
+        <TextBlock FontSize="40">Cowpoke Chile</TextBlock>
             <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="5pt">Cheese</TextBlock>
                     <CheckBox Margin="5pt" IsChecked="{Binding Path=Cheese}"/>
-            
             </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Green Onions</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=GreenOnions}"/>
         </StackPanel>
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="5pt">Tortilla Strips</TextBlock>
+                <CheckBox Margin="5pt" IsChecked="{Binding Path=TortillaStrips}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="5pt">Sour Cream</TextBlock>
+                <CheckBox Margin="5pt" IsChecked="{Binding Path=SourCream}"/>
+        </StackPanel>
+        </StackPanel>
+    
 </UserControl>
