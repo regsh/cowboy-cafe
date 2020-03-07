@@ -19,5 +19,9 @@ namespace CowboyCafe.Data
 
         double Price { get; }
         
+        /// <summary>
+        /// Property to hold the name of the item, added so side and drink displays update with size changes
+        /// </summary>
+        string Name { get; }
     }
 }

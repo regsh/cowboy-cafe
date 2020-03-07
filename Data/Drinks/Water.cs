@@ -40,6 +40,12 @@ namespace CowboyCafe.Data
             }
 
         }
+
+        /// <summary>
+        /// Property holding the name for display in the order summary
+        /// </summary>
+        public override string Name => ToString();
+
         /// <summary>
         /// Returns a description of the drink with size as a string
         /// </summary>

@@ -5,11 +5,12 @@
  * Purpose: Represent the Baked Beans side at cowboy cafe
  */
 using System;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to represent the Pan de Campo side
+    /// Class to represent the BakedBeans side
     /// </summary>
     public class BakedBeans : Side
     {
@@ -53,6 +54,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        public override string Name
+        {
+            get => this.ToString();
+        }
+
+
+
         /// <summary>
         /// Returns string with description of the side with size
         /// </summary>

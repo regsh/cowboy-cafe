@@ -109,6 +109,12 @@ namespace CowboyCafe.Data
             }
         }
         /// <summary>
+        /// Property holding the name for display in the order summary
+        /// </summary>
+        public override string Name => ToString();
+
+
+        /// <summary>
         /// Returns the name of the entree as a string
         /// </summary>
         /// <returns></returns>

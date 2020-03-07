@@ -7,17 +7,39 @@
 
 using System.Collections.Generic;
 
+using System.ComponentModel;
+
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side:IOrderItem
+    public abstract class Side:IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Private backing variable for Size property
+        /// </summary>
+        private Size size = Size.Small;
+
         /// <summary>
         /// Gets the size of the entree
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size 
+        {
+            get => size;
+          
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+
+                //also need to invoke property changed on the subtotal of the order
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            }
+        }
 
         /// <summary>
         /// Gets the price of the side
@@ -29,8 +51,15 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
-        //can i just make this null and do a null check later
+        /// <summary>
+        /// Gets the name of the item for display in the order summary
+        /// </summary>
+        public abstract string Name { get; }
+
+        //can i just make this null and do a null check later?
         //no sides have special instructions
         public List<string> SpecialInstructions { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

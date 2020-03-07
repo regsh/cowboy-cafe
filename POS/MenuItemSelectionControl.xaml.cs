@@ -51,11 +51,18 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
+                //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
                 var orderControl = this.FindAncestor<OrderControl>();
+
+                //Creates new customization screen for the cowpoke chili
                 var screen = new CustomizationScreens.CowpokeChiliCustomization();
+                
+                //Creates new instance of CowpokeChili to add to order and to set as the data context for the cust. screen
                 var item = new CowpokeChili();
                 screen.DataContext = item;
                 myOrder.Add(item);
+                
+                //Displays the customization screen
                 orderControl.SwapScreen(screen);
             }
         }
@@ -107,20 +114,19 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
+                //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
                 var orderControl = this.FindAncestor<OrderControl>();
+
+                //Creates new customization screen for the cowpoke chili
                 var screen = new CustomizationScreens.SizeControl();
+
+                //Creates new instance of CowpokeChili to add to order and to set as the data context for the cust. screen
                 var item = new BakedBeans();
                 screen.DataContext = item;
                 myOrder.Add(item);
-                orderControl.SwapScreen(screen);
 
-                /*
-                var orderControl = this.FindAncestor<OrderControl>();
-                var screen = new CustomizationScreens.CowpokeChiliCustomization();
-                var item = new CowpokeChili();
-                screen.DataContext = item;
-                myOrder.Add(item);
-                orderControl.SwapScreen(screen); */
+                //Displays the customization screen
+                orderControl.SwapScreen(screen);
 
             }
         }

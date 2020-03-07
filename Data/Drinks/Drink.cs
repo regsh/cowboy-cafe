@@ -35,6 +35,9 @@ namespace CowboyCafe.Data
         /// Special instructions for preparing the drink
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
-
+        /// <summary>
+        /// Name of the drink as displayed in the OrderSummaryControl
+        /// </summary>
+        public abstract string Name { get; }
     }
 }

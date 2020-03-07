@@ -13,35 +13,12 @@ namespace PointOfSale.CustomizationScreens
     /// </summary>
     public partial class SizeControl : UserControl
     {
-        CowboyCafe.Data.Size currentSize;
-        
+        //Data context for this will be set in MenuItemSelectionControl
+        //to be an IOrderItem that requires a size (i.e. side or drink)
         public SizeControl()
         {
             InitializeComponent();
         }
 
-        void SmallBtn_Click(object sender, EventArgs e)
-        {
-            SelectButton(SmallBtn);
-
-        }
-
-        void MediumBtn_Click(object sender, EventArgs e)
-        {
-            SelectButton(MediumBtn);
-        }
-
-        void LargeBtn_Click(object sender, EventArgs e)
-        {
-            SelectButton(LargeBtn);
-        }
-
-        void SelectButton(Button b)
-        {
-            SmallBtn.Background = default;
-            MediumBtn.Background = default;
-            LargeBtn.Background = default;
-            b.Background = (Brush)Application.Current.Resources["Selected"];
-        }
     }
 }

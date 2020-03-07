@@ -44,7 +44,7 @@
                             <ColumnDefinition MinWidth="30"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="{Binding}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Path=Name}" FontWeight="Bold"/>
                             <ListView ItemsSource="{Binding Path=SpecialInstructions}" BorderThickness="0" Background="Transparent"/>
                         </StackPanel>
                         <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat=c}" HorizontalAlignment="Right"/>

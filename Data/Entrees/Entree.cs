@@ -26,5 +26,10 @@ namespace CowboyCafe.Data
         /// Holds instructions for the creation of an entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name of the entree for display in the order summary
+        /// </summary>
+        public abstract string Name { get; }
     }
 }
