@@ -5,6 +5,7 @@
  * Purpose: Size base class from which sides at cowboy cafe are derived
  */
 
+using System;
 using System.Collections.Generic;
 
 using System.ComponentModel;
@@ -36,8 +37,7 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
 
-                //also need to invoke property changed on the subtotal of the order
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                
             }
         }
 
@@ -61,5 +61,7 @@ namespace CowboyCafe.Data
         public List<string> SpecialInstructions { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public static Action OnSizeChange;
     }
 }

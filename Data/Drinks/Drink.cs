@@ -4,6 +4,7 @@
  * Purpose: Base class for foundation of drink orders at the cowboy cafe
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -39,5 +40,7 @@ namespace CowboyCafe.Data
         /// Name of the drink as displayed in the OrderSummaryControl
         /// </summary>
         public abstract string Name { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -7,6 +7,7 @@
 using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Xunit;
 
@@ -20,6 +21,10 @@ namespace CowboyCafe.DataTests
             public List<string> SpecialInstructions { get; set; }
 
             public double Price { get; set; } = 0;
+
+            public string Name { get; set; } = "MockItem";
+
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
         [Fact] //In Xunit, a fact is a test that expects no parameters

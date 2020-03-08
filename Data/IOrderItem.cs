@@ -12,7 +12,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     //Iterface to allow for a collection of menu items with similar functionality
-    public interface IOrderItem
+    public interface IOrderItem: INotifyPropertyChanged
     {
         //Interfaces cannot have fields, but Properties are acceptable
         List<string> SpecialInstructions { get; }

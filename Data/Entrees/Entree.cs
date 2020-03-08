@@ -4,6 +4,7 @@
  * 2/5/2020
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -31,5 +32,7 @@ namespace CowboyCafe.Data
         /// The name of the entree for display in the order summary
         /// </summary>
         public abstract string Name { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
