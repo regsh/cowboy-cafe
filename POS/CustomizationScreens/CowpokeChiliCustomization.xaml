@@ -26,6 +26,6 @@
                 <TextBlock Margin="5pt">Sour Cream</TextBlock>
                 <CheckBox Margin="5pt" IsChecked="{Binding Path=SourCream}"/>
         </StackPanel>
-        </StackPanel>
+    </StackPanel>
     
 </UserControl>

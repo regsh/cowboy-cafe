@@ -34,16 +34,7 @@ namespace PointOfSale
 
         private void AngryChickenOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(DataContext is Order myOrder)
-            {
-               //Window selectSize = new SizeSelection();
-               // selectSize.Show();
-
-                myOrder.Add(new AngryChicken());
-                
-                
-            }
+            CustomizeEntree(new AngryChicken());
         }
 
 
@@ -51,6 +42,7 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
+                CustomizeEntree(new CowpokeChili());
                 //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
                 var orderControl = this.FindAncestor<OrderControl>();
 
@@ -67,23 +59,34 @@ namespace PointOfSale
             }
         }
 
+        private void CustomizeEntree(Entree entree)
+        {
+            if (DataContext is Order myOrder)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                var entreeType = entree.GetType();
+
+                switch (entree)
+                {
+                    case AngryChicken ac:
+                        var screen = new AngryChickenCustomization();
+                        screen.DataContext = entree;
+                        myOrder.Add(entree);
+                        orderControl.SwapScreen(screen);
+                        break;
+                }
+            }
+        }
 
         private void DakotaDoubleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order myOrder)
             {
-                //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
                 var orderControl = this.FindAncestor<OrderControl>();
-
-                //Creates new customization screen for the cowpoke chili
                 var screen = new CustomizationScreens.DakotaDoubleBurgerCustomization();
-
-                //Creates new instance of CowpokeChili to add to order and to set as the data context for screen
                 var item = new DakotaDoubleBurger();
                 screen.DataContext = item;
                 myOrder.Add(item);
-
-                //Displays the customization screen
                 orderControl.SwapScreen(screen);
             }
         }
