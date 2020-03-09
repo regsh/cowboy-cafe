@@ -66,10 +66,10 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
+        
         private void item_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            base.OnCollectionChanged(new ItemChangeEventArgs(e.PropertyName));
         }
     }
 }

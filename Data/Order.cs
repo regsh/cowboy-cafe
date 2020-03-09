@@ -63,7 +63,11 @@ namespace CowboyCafe.Data
 
         void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            
+                //Ideally this would only happen when the property of the item changed was "Price"
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                //Could also use this to update the ToString display (and remove Name property)
+            
         }
 
         /// <summary>
