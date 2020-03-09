@@ -60,8 +60,6 @@ namespace CowboyCafe.Data
             get => this.ToString();
         }
 
-
-
         /// <summary>
         /// Returns string with description of the side with size
         /// </summary>

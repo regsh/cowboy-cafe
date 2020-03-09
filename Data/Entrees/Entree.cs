@@ -33,6 +33,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract string Name { get; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
     }
 }

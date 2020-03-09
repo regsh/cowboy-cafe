@@ -57,7 +57,7 @@ namespace PointOfSale
                 //Creates new customization screen for the cowpoke chili
                 var screen = new CustomizationScreens.CowpokeChiliCustomization();
                 
-                //Creates new instance of CowpokeChili to add to order and to set as the data context for the cust. screen
+                //Creates new instance of CowpokeChili to add to order and to set as the data context for screen
                 var item = new CowpokeChili();
                 screen.DataContext = item;
                 myOrder.Add(item);
@@ -72,7 +72,19 @@ namespace PointOfSale
         {
             if (DataContext is Order myOrder)
             {
-                myOrder.Add(new DakotaDoubleBurger());
+                //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
+                var orderControl = this.FindAncestor<OrderControl>();
+
+                //Creates new customization screen for the cowpoke chili
+                var screen = new CustomizationScreens.DakotaDoubleBurgerCustomization();
+
+                //Creates new instance of CowpokeChili to add to order and to set as the data context for screen
+                var item = new DakotaDoubleBurger();
+                screen.DataContext = item;
+                myOrder.Add(item);
+
+                //Displays the customization screen
+                orderControl.SwapScreen(screen);
             }
         }
 

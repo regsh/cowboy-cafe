@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The property changed event
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private bool cheese = true;
         /// <summary>
@@ -35,6 +35,7 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
+                //Because this is for the purpose of updating the UI, I don't understand why just invoking on Special Instructions is not sufficient?
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }

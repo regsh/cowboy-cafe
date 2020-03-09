@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// IOrderItems added to the order
         /// </summary>
-        public ItemsChangeObservableCollection<IOrderItem> Items { get; } = new ItemsChangeObservableCollection<IOrderItem>();
+        public ObservableCollection<IOrderItem> Items { get; } = new ObservableCollection<IOrderItem>();
         
 
         /// <summary>
@@ -58,16 +58,6 @@ namespace CowboyCafe.Data
         public Order()
         {
             OrderNumber = ++lastOrderNumber;
-            Items.CollectionChanged += OnCollectionChanged;
-        }
-
-        void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            
-                //Ideally this would only happen when the property of the item changed was "Price"
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-                //Could also use this to update the ToString display (and remove Name property)
-            
         }
 
         /// <summary>
@@ -76,13 +66,19 @@ namespace CowboyCafe.Data
         /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
+            item.PropertyChanged += Item_PropertyChanged;
             
             Items.Add(item);
-           // if (item is INotifyPropertyChanged) { item.PropertyChanged += OnItemChanged; }//TAKE OUT IF STATEMENT WHEN ALL ITEMS IMPLEMENT THIS
-            
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items")); //still don't really understand why there is a null ref. exception when no listener
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
+
+        private void Item_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            //Could add if statement to update string displayed (and take out Name property)
+        }
+
         /// <summary>
         /// Removes an IOrderItem from the collection of order items
         /// </summary>
@@ -93,17 +89,6 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
-        /*
-        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            if (e.PropertyName == "Price")
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            }
-        }
-        */
         
         /// <summary>
         /// Converts the order to a string containing the order number
