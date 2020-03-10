@@ -13,16 +13,46 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowboyCoffee : Drink
     {
-        public bool Decaf { get; set; } = false;
+        private bool decaf = false;
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                decaf = value;
+                NotifyPropertyChanged("Decaf");
+                NotifyPropertyChanged("Name");
+            }
+        }
+        private bool roomForCream = false;
         /// <summary>
         /// Whether room should be left for cream when preparing order
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get => roomForCream;
+            set
+            {
+                roomForCream = value;
+                NotifyPropertyChanged("RoomForCream");
+                NotifyPropertyChanged("SpecialInstructions");
+            }
+        }
 
+        private bool ice = false;
         /// <summary>
         /// Whether the coffee is served with ice
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                NotifyPropertyChanged("Ice");
+                NotifyPropertyChanged("SpecialInstructions");
+            }
+        }
 
         /// <summary>
         /// The price of the coffee
@@ -66,6 +96,8 @@ namespace CowboyCafe.Data
                 List<string> instructions = new List<string>();
                 if (Ice) instructions.Add("Add Ice");
                 if (RoomForCream) instructions.Add("Room for Cream");
+
+                //should it show decaf in special instructions? redundant because also reflected in the name
                 if (Decaf) instructions.Add("Decaf");
                 return instructions;
             }

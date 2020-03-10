@@ -12,6 +12,8 @@
              d:DesignHeight="550" d:DesignWidth="800">
     <!--DockPanel to hold the entire UI to include General control buttons and order summary-->
     <DockPanel>
+        
+      
         <local:OrderSummaryControl x:Name="uxOrderSummary" DockPanel.Dock="Right" MinWidth="200" MaxWidth="300" Margin="10"/>
 
         <!--Grid to hold the General Nav buttons-->

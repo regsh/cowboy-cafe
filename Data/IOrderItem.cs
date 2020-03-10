@@ -24,6 +24,6 @@ namespace CowboyCafe.Data
         /// </summary>
         string Name { get; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
     }
 }

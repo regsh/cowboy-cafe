@@ -11,12 +11,31 @@ namespace CowboyCafe.Data
     /// <summary>
     ///Abstract class to represent a generic drink at the Cowboy Cafe
     /// </summary>
-    public abstract class Drink:IOrderItem
+    public abstract class Drink:IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
-        /// Represents the size of the drink, default of small
+        /// Private backing variable for Size property
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        private Size size = Size.Small;
+
+        /// <summary>
+        /// Gets the size of the entree
+        /// </summary>
+        public virtual Size Size
+        {
+            get => size;
+
+            set
+            {
+                size = value;
+                
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+            }
+        }
+
 
         /// <summary>
         /// Represents the price of the drink
@@ -28,10 +47,20 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
+        private bool ice = true;
         /// <summary>
         /// Whether the given drink contains ice
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public virtual bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                NotifyPropertyChanged("Ice");
+                NotifyPropertyChanged("SpecialInstructions");
+            }
+        }
         /// <summary>
         /// Special instructions for preparing the drink
         /// </summary>
@@ -42,5 +71,11 @@ namespace CowboyCafe.Data
         public abstract string Name { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        //Taken from: https://stackoverflow.com/questions/23577311/how-to-implement-inotifypropertychanged-for-derived-classes
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

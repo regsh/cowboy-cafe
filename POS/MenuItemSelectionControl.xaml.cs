@@ -40,13 +40,17 @@ namespace PointOfSale
 
         private void CowpokeChiliOrderBtn_Click(object sender, RoutedEventArgs e)
         {
+            CustomizeEntree(new CowpokeChili());
+            /*
             if (DataContext is Order myOrder)
             {
+
+                
                 CustomizeEntree(new CowpokeChili());
-                //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
+                
                 var orderControl = this.FindAncestor<OrderControl>();
 
-                //Creates new customization screen for the cowpoke chili
+                
                 var screen = new CustomizationScreens.CowpokeChiliCustomization();
                 
                 //Creates new instance of CowpokeChili to add to order and to set as the data context for screen
@@ -57,152 +61,172 @@ namespace PointOfSale
                 //Displays the customization screen
                 orderControl.SwapScreen(screen);
             }
+            */
         }
-
+        /// <summary>
+        /// Method to customize the entree items on cowboy cafe menu
+        /// Selects appropriate customization screen and displays options according to entree ordered
+        /// </summary>
+        /// <param name="entree">Instance of the entree to be customized</param>
         private void CustomizeEntree(Entree entree)
-        {
-            if (DataContext is Order myOrder)
-            {
-                var orderControl = this.FindAncestor<OrderControl>();
-                var entreeType = entree.GetType();
-
-                switch (entree)
-                {
-                    case AngryChicken ac:
-                        var screen = new AngryChickenCustomization();
-                        screen.DataContext = entree;
-                        myOrder.Add(entree);
-                        orderControl.SwapScreen(screen);
-                        break;
-                }
-            }
-        }
-
-        private void DakotaDoubleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order myOrder)
-            {
-                var orderControl = this.FindAncestor<OrderControl>();
-                var screen = new CustomizationScreens.DakotaDoubleBurgerCustomization();
-                var item = new DakotaDoubleBurger();
-                screen.DataContext = item;
-                myOrder.Add(item);
-                orderControl.SwapScreen(screen);
-            }
-        }
-
-        private void PecosPulledPorkOrderBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new PecosPulledPork());
-            }
-        }
-
-        private void RustlersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new RustlersRibs());
-            }
-        }
-
-        private void TexasTripleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new TexasTripleBurger());
-            }
-        }
-
-        private void TrailBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new Trailburger());
-            }
-        }
-
-        //CLICK EVENT HANDLERS FOR SIDES
-        
-        private void BakedBeansOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order myOrder)
             {
                 //Finds the OrderControl that contains the MenuItemSelectionControl by recursive call that compares parent type to OrderControl
                 var orderControl = this.FindAncestor<OrderControl>();
 
-                //Creates new customization screen for the cowpoke chili
-                var screen = new CustomizationScreens.SizeControl();
+                //Creates variable to hold the customization screen determined by the switch
+                UserControl screen = null;
 
-                //Creates new instance of CowpokeChili to add to order and to set as the data context for the cust. screen
-                var item = new BakedBeans();
-                screen.DataContext = item;
-                myOrder.Add(item);
+                switch (entree)
+                {
+                    case AngryChicken ac:
+                        screen = new AngryChickenCustomization();
+                        break;
+                    case CowpokeChili cc:
+                        screen = new CowpokeChiliCustomization();
+                        break;
+                    case DakotaDoubleBurger ddb:
+                        screen = new DakotaDoubleBurgerCustomization();
+                        break;
+                    case PecosPulledPork ppp:
+                        screen = new PecosPulledPorkCustomization();
+                        break;
+                    case RustlersRibs rr:
+                        screen = new RustlersRibsCustomization();
+                        break;
+                    case TexasTripleBurger ttb:
+                        screen = new TexasTripleBurgerCustomization();
+                        break;
+                    case Trailburger tb:
+                        screen = new TrailburgerCustomization();
+                        break;
+                    default:
+                        break;
+                        
+                }
+                //Adds item determined by button to the entree
+                myOrder.Add(entree);
 
-                //Displays the customization screen
-                orderControl.SwapScreen(screen);
-
+                //switches screen to correct customization screen
+                if (screen != null)
+                {
+                    screen.DataContext = entree;
+                    orderControl.SwapScreen(screen);
+                }
             }
+        }
+
+        private void DakotaDoubleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeEntree(new DakotaDoubleBurger());
+        }
+
+        private void PecosPulledPorkOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeEntree(new PecosPulledPork());
+        }
+
+        private void RustlersRibsOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeEntree(new RustlersRibs());
+        }
+
+        private void TexasTripleBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeEntree(new TexasTripleBurger());
+        }
+
+        private void TrailBurgerOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeEntree(new Trailburger());
+        }
+
+        //CLICK EVENT HANDLERS FOR SIDES
+        private void CustomizeSide(Side side)
+        {
+            if (DataContext is Order myOrder)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                SizeControl sizeControl = new SizeControl();
+                myOrder.Add(side);
+                sizeControl.DataContext = side;
+                orderControl.SwapScreen(sizeControl);
+            }
+        }
+
+        private void BakedBeansOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeSide(new BakedBeans());
         }
 
         private void ChiliCheeseFriesOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new ChiliCheeseFries());
-            }
+            CustomizeSide(new ChiliCheeseFries());
         }
 
         private void CornDodgersOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new CornDodgers());
-            }
+            CustomizeSide(new CornDodgers());
         }
 
         private void PanDeCampoOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new PanDeCampo());
-            }
+            CustomizeSide(new PanDeCampo());
         }
 
         //CLICK EVENT HANDLERS FOR DRINKS
 
-        private void CowboyCoffeeOrderBtn_Click(object sender, RoutedEventArgs e)
+        private void CustomizeDrink(Drink drink)
         {
             if (DataContext is Order myOrder)
             {
-                myOrder.Add(new CowboyCoffee()) ;
+                var orderControl = this.FindAncestor<OrderControl>();
+                UserControl screen = null;
+                switch (drink)
+                {
+                    case CowboyCoffee cc:
+                        screen = new CowboyCoffeeCustomization();
+                        break;
+                    case JerkedSoda js:
+                        screen = new JerkedSodaCustomization();
+                        break;
+                    case TexasTea tt:
+                        screen = new TexasTeaCustomization();
+                        break;
+                    case Water w:
+                        screen = new WaterCustomization();
+                        break;
+                    default:
+                        break;
+
+                }
+                myOrder.Add(drink);
+                if (screen != null)
+                {
+                    screen.DataContext = drink;
+                    orderControl.SwapScreen(screen);
+                }
             }
+        }
+        private void CowboyCoffeeOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CustomizeDrink(new CowboyCoffee());
         }
 
         private void JerkedSodaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new JerkedSoda());
-            }
+            CustomizeDrink(new JerkedSoda());
         }
 
         private void TexasTeaOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new TexasTea());
-            }
+            CustomizeDrink(new TexasTea());
         }
 
         private void WaterOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order myOrder)
-            {
-                myOrder.Add(new Water());
-            }
+            CustomizeDrink(new Water());
         }
-        
     }
 }

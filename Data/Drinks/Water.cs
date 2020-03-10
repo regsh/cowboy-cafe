@@ -4,14 +4,17 @@
  * Public class to represent an order of Water at the Cowboy Cafe
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Class to represent an order of water
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
+
+
         /// <summary>
         /// Price of the water
         /// </summary>
@@ -22,10 +25,20 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories => 0;
 
+        private bool lemon = false;
         /// <summary>
         /// If the water is served with a lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                lemon = value;
+                NotifyPropertyChanged("Lemon");
+                NotifyPropertyChanged("SpecialInstructions");
+            }
+        }
         /// <summary>
         /// Special instructions for preparing an order of water
         /// </summary>
@@ -54,5 +67,6 @@ namespace CowboyCafe.Data
         {
             return Size.ToString() + " Water";
         }
+
     }
 }

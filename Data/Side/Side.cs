@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
         private Size size = Size.Small;
 
         /// <summary>
-        /// Gets the size of the entree
+        /// Gets the size of the side
         /// </summary>
         public virtual Size Size 
         {
@@ -61,7 +61,5 @@ namespace CowboyCafe.Data
         public List<string> SpecialInstructions { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public static Action OnSizeChange;
     }
 }
