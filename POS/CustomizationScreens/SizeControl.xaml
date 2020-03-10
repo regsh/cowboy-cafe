@@ -18,9 +18,9 @@
             <local:EnumBooleanConverter x:Key="enumBooleanConverter" />
         </StackPanel.Resources>
         <TextBlock FontSize="30">Select a Size</TextBlock>
-            <RadioButton GroupName="Size" FontSize="20" VerticalAlignment="Center" Margin="5,30,5,5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Small}">Small</RadioButton>
-            <RadioButton GroupName="Size" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Medium}">Medium</RadioButton>
-        <RadioButton GroupName="Size" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Large}">Large</RadioButton>
+            <RadioButton GroupName="Size"  VerticalAlignment="Center" Margin="5,30,5,5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Small}">Small</RadioButton>
+            <RadioButton GroupName="Size"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Medium}">Medium</RadioButton>
+        <RadioButton GroupName="Size"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Size, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Large}">Large</RadioButton>
     </StackPanel>
 
 

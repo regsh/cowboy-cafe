@@ -17,11 +17,11 @@
         <StackPanel Orientation="Vertical" Grid.Column="0">
             <local:SizeControl Grid.Column="0"/>
             <TextBlock FontSize="30" Margin="0,20">Select a Flavor</TextBlock>
-            <RadioButton GroupName="Flavor" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=CreamSoda}">Cream Soda</RadioButton>
-            <RadioButton GroupName="Flavor" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=OrangeSoda}">Orange Soda</RadioButton>
-            <RadioButton GroupName="Flavor" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Sarsparilla}">Sarsparilla</RadioButton>
-            <RadioButton GroupName="Flavor" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=BirchBeer}">Birch Beer</RadioButton>
-            <RadioButton GroupName="Flavor" FontSize="20" VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=RootBeer}">Root Beer</RadioButton>
+            <RadioButton GroupName="Flavor"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=CreamSoda}">Cream Soda</RadioButton>
+            <RadioButton GroupName="Flavor"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=OrangeSoda}">Orange Soda</RadioButton>
+            <RadioButton GroupName="Flavor"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Sarsparilla}">Sarsparilla</RadioButton>
+            <RadioButton GroupName="Flavor"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=BirchBeer}">Birch Beer</RadioButton>
+            <RadioButton GroupName="Flavor"  VerticalAlignment="Center" Margin="5" IsChecked="{Binding Path=Flavor, Converter={StaticResource enumBooleanConverter}, ConverterParameter=RootBeer}">Root Beer</RadioButton>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock FontSize="30" Text="Other Options:"></TextBlock>
