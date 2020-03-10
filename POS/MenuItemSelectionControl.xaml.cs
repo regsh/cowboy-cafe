@@ -41,27 +41,7 @@ namespace PointOfSale
         private void CowpokeChiliOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             CustomizeEntree(new CowpokeChili());
-            /*
-            if (DataContext is Order myOrder)
-            {
-
-                
-                CustomizeEntree(new CowpokeChili());
-                
-                var orderControl = this.FindAncestor<OrderControl>();
-
-                
-                var screen = new CustomizationScreens.CowpokeChiliCustomization();
-                
-                //Creates new instance of CowpokeChili to add to order and to set as the data context for screen
-                var item = new CowpokeChili();
-                screen.DataContext = item;
-                myOrder.Add(item);
-                
-                //Displays the customization screen
-                orderControl.SwapScreen(screen);
-            }
-            */
+            
         }
         /// <summary>
         /// Method to customize the entree items on cowboy cafe menu
@@ -93,7 +73,6 @@ namespace PointOfSale
                         screen = new PecosPulledPorkCustomization();
                         break;
                     case RustlersRibs rr:
-                        screen = new RustlersRibsCustomization();
                         break;
                     case TexasTripleBurger ttb:
                         screen = new TexasTripleBurgerCustomization();

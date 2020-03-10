@@ -34,5 +34,11 @@ namespace CowboyCafe.Data
         public abstract string Name { get; }
 
         public virtual event PropertyChangedEventHandler PropertyChanged;
+
+        //Taken from: https://stackoverflow.com/questions/23577311/how-to-implement-inotifypropertychanged-for-derived-classes
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

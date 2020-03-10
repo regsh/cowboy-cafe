@@ -6,7 +6,47 @@
              xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel>
+        <TextBlock FontSize="40" Text="{Binding Path=Name}"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Bun</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Bun}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Ketchup</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Ketchup}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Mustard</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Mustard}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Pickle</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Pickle}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Cheese</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Cheese}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Tomato</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Tomato}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Lettuce</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Lettuce}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Mayo</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Mayo}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Bacon</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Bacon}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Egg</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Egg}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

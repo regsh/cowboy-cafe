@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel>
+        <TextBlock FontSize="40" Text="{Binding Path=Name}"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Bread</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Bread}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5pt">Pickle</TextBlock>
+            <CheckBox Margin="5pt" IsChecked="{Binding Path=Pickle}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

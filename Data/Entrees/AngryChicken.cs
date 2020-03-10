@@ -5,7 +5,6 @@
  * Purpose: represent the Angry Chicken entree at cowboy cafe
  */
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -14,7 +13,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class AngryChicken : Entree
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
+
 
         private bool bread = true;
         /// <summary>
@@ -23,8 +22,10 @@ namespace CowboyCafe.Data
         public bool Bread
         {
             get { return bread; }
-            set { bread = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            set
+            {
+                bread = value;
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -35,8 +36,10 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            set
+            {
+                pickle = value;
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 

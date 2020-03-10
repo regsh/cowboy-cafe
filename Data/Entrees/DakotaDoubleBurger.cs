@@ -13,8 +13,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class DakotaDoubleBurger : Entree
     {
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         private bool bun = true;
         /// <summary>
         /// Entree includes a bun
@@ -28,8 +26,7 @@ namespace CowboyCafe.Data
             set
             {
                 bun = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool ketchup = true;
@@ -45,8 +42,7 @@ namespace CowboyCafe.Data
             set
             {
                 ketchup = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool mustard = true;
@@ -62,8 +58,7 @@ namespace CowboyCafe.Data
             set
             {
                 mustard = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool pickle = true;
@@ -76,8 +71,7 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool cheese = true;
@@ -93,7 +87,7 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool tomato = true;
@@ -106,7 +100,7 @@ namespace CowboyCafe.Data
             set
             {
                 tomato = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool lettuce = true;
@@ -122,7 +116,7 @@ namespace CowboyCafe.Data
             set
             {
                 lettuce = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
         private bool mayo = true;
@@ -138,7 +132,7 @@ namespace CowboyCafe.Data
             set
             {
                 mayo = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 

@@ -20,11 +20,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        public override event PropertyChangedEventHandler PropertyChanged;
-
+        
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
@@ -35,9 +31,7 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
-                //Because this is for the purpose of updating the UI, I don't understand why just invoking on Special Instructions is not sufficient?
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -51,8 +45,7 @@ namespace CowboyCafe.Data
             set
             {
                 sourCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
 
             }
         }
@@ -67,8 +60,7 @@ namespace CowboyCafe.Data
             set
             {
                 greenOnions = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
@@ -84,8 +76,7 @@ namespace CowboyCafe.Data
             set
             {
                 tortillaStrips = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                NotifyPropertyChanged("SpecialInstructions");
             }
         }
 
