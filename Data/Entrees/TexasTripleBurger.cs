@@ -1,10 +1,7 @@
-﻿/*TexasTripleBurger.cs
-<<<<<<< HEAD
- * Regan Hale
-=======
+﻿/*
+ * TexasTripleBurger.cs
  * Author:Regan Hale
  * Purpose: represent the texas triple burger entree at cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System.Collections.Generic;
 
@@ -25,7 +22,9 @@ namespace CowboyCafe.Data
             {
                 return bun;
             }
-            set { bun = value;
+            set
+            {
+                bun = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -39,7 +38,9 @@ namespace CowboyCafe.Data
             {
                 return ketchup;
             }
-            set { ketchup = value;
+            set
+            {
+                ketchup = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -53,7 +54,9 @@ namespace CowboyCafe.Data
             {
                 return mustard;
             }
-            set { mustard = value;
+            set
+            {
+                mustard = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -64,7 +67,9 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value;
+            set
+            {
+                pickle = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -78,7 +83,9 @@ namespace CowboyCafe.Data
             {
                 return cheese;
             }
-            set { cheese = value;
+            set
+            {
+                cheese = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -89,7 +96,9 @@ namespace CowboyCafe.Data
         public bool Tomato
         {
             get { return tomato; }
-            set { tomato = value;
+            set
+            {
+                tomato = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -103,7 +112,9 @@ namespace CowboyCafe.Data
             {
                 return lettuce;
             }
-            set { lettuce = value;
+            set
+            {
+                lettuce = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -117,7 +128,9 @@ namespace CowboyCafe.Data
             {
                 return mayo;
             }
-            set { mayo = value;
+            set
+            {
+                mayo = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -128,7 +141,9 @@ namespace CowboyCafe.Data
         public bool Bacon
         {
             get { return bacon; }
-            set { bacon = value;
+            set
+            {
+                bacon = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -136,7 +151,9 @@ namespace CowboyCafe.Data
         public bool Egg
         {
             get { return egg; }
-            set { egg = value;
+            set
+            {
+                egg = value;
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }

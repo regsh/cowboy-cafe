@@ -14,6 +14,9 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : Drink
     {
         private bool decaf = false;
+        /// <summary>
+        /// Whether the coffee is decaf
+        /// </summary>
         public bool Decaf
         {
             get => decaf;

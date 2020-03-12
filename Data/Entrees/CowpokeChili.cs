@@ -1,14 +1,9 @@
 ﻿/*
  * CowpokeChili.cs
-<<<<<<< HEAD
  * Provided by Dr. Nathan Bean CIS400
- * Edited by: Regan Hale
-=======
- * Author:Nathan Bean
  * Edited by: Regan Hale
  * Class: CowpokeChili
  * Purpose: represent the cowpoke chili at the cowboy cafe
->>>>>>> f61996ff76cfd58387cf23a011f75139de2191c2
  */
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,4 +1,8 @@
-﻿<!--Note that because it is in a new folder, VS automatically changes the namespace-->
+﻿<!--CowpokeChiliCustomizatin.xaml
+    Author:Regan Hale
+    Purpose: Display customization options for the CowpokeChili entree-->
+    
+    <!--Note that because it is in a new folder, VS automatically changes the namespace-->
     <UserControl x:Class="PointOfSale.CustomizationScreens.CowpokeChiliCustomization" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

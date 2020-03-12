@@ -69,7 +69,7 @@ namespace CowboyCafe.Data
             item.PropertyChanged += Item_PropertyChanged;
             
             Items.Add(item);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items")); //still don't really understand why there is a null ref. exception when no listener
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 

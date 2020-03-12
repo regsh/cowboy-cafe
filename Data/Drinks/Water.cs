@@ -13,8 +13,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class Water : Drink, INotifyPropertyChanged
     {
-
-
         /// <summary>
         /// Price of the water
         /// </summary>
@@ -51,7 +49,6 @@ namespace CowboyCafe.Data
                 if (Lemon) instructions.Add("Add Lemon");
                 return instructions;
             }
-
         }
 
         /// <summary>
