@@ -57,11 +57,7 @@
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock Style="{StaticResource ColumnHeaderSyle}"> Drinks  </TextBlock>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <RadioButton IsChecked="True">Sml</RadioButton>
-                    <RadioButton>Med</RadioButton>
-                    <RadioButton>Lg</RadioButton>
-            </StackPanel>
+            
 
             <Button Name="CowbowCoffeeOrderBtn" Click="CowboyCoffeeOrderBtn_Click">Cowboy Coffee</Button>
             <!--names need to be unique-->
