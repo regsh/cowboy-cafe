@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
             set
             {
                 decaf = value;
-                NotifyPropertyChanged("Decaf");
+                NotifyPropertyChanged("SpecialInstructions");
                 NotifyPropertyChanged("Name");
             }
         }
@@ -37,7 +37,6 @@ namespace CowboyCafe.Data
             set
             {
                 roomForCream = value;
-                NotifyPropertyChanged("RoomForCream");
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -52,7 +51,6 @@ namespace CowboyCafe.Data
             set
             {
                 ice = value;
-                NotifyPropertyChanged("Ice");
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }

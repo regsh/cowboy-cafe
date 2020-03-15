@@ -25,7 +25,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             //orderControl = this.FindAncestor<OrderControl>();
-            
         }
         
 
