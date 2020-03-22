@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
 
         //Taken from: https://stackoverflow.com/questions/23577311/how-to-implement-inotifypropertychanged-for-derived-classes
         /// <summary>
-        /// Method to invoke Drink base class PropertyChanged event handler in derived classes
+        /// Method to invoke Entree base class PropertyChanged event handler in derived classes
         /// Take from StackOverflow post#23577311
         /// </summary>
         /// <param name="propertyName"></param>

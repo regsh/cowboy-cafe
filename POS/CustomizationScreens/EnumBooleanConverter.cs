@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * EnumBooleanConverter.cs
+ * Author: Lars (StackOverflow user number: 42809)
+ * Purpose: Provides a way to bind radio buttons to selection options defined in an enum
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
