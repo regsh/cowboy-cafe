@@ -26,12 +26,13 @@ namespace PointOfSale
         public void CancelOrderBtn_Click(object sender, EventArgs e)
         {
             this.DataContext = new Order();
+            CustomizationContainer.Child = new MenuItemSelectionControl();
         }
 
         public void CompleteOrderBtn_Click(object sender, EventArgs e)
         {
             this.DataContext = new Order();
-
+            CustomizationContainer.Child = new MenuItemSelectionControl();
         }
 
         public void ItemSelectionBtn_Click(object sender, EventArgs e)

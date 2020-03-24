@@ -31,7 +31,28 @@ namespace PointOfSale
 
         private void DeleteItem(object sender, RoutedEventArgs e)
         {
-            //Insert implementation here
+           if (sender is Button b)
+            {
+                if(b.DataContext is IOrderItem item)
+                {
+                    try
+                    {
+                        Order currentOrder = (Order)this.DataContext;
+                        currentOrder.Items.Remove(item);
+                    }
+                    catch
+                    {
+                        throw new System.Exception();
+                    }
+                }
+            }
+            ReplaceScreen();
+        }
+
+        private void ReplaceScreen()
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            orderControl.CustomizationContainer.Child = new MenuItemSelectionControl();
         }
 
         private void ShowCustomization(IOrderItem item)
