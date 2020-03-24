@@ -4,6 +4,7 @@
  * Purpose: To provide a means of viewing the current order in the POS inteface
  */
 
+using System.Windows;
 using System.Windows.Controls;
 using CowboyCafe.Data;
 using PointOfSale.CustomizationScreens;
@@ -26,6 +27,11 @@ namespace PointOfSale
         {
             IOrderItem selectedItem = ((sender as ListBox).SelectedItem as IOrderItem);
             ShowCustomization(selectedItem);  
+        }
+
+        private void DeleteItem(object sender, RoutedEventArgs e)
+        {
+            //Insert implementation here
         }
 
         private void ShowCustomization(IOrderItem item)

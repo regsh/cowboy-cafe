@@ -43,10 +43,15 @@
                             <ColumnDefinition MinWidth="30"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="{Binding Path=Name}" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Padding ="5" Click="DeleteItem" Background="Red" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Right">X</Button>
+                            
+                                <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            
                             <ListView ItemsSource="{Binding Path=SpecialInstructions}" BorderThickness="0" Background="Transparent"/>
                         </StackPanel>
-                        <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat=c}" HorizontalAlignment="Right"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat=c}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     </Grid>
                             
                         
