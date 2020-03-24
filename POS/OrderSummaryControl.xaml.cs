@@ -5,7 +5,9 @@
  */
 
 using System.Windows.Controls;
-
+using CowboyCafe.Data;
+using PointOfSale.CustomizationScreens;
+using PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -18,6 +20,81 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
+        }
+
+        private void NewItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+            IOrderItem selectedItem = ((sender as ListBox).SelectedItem as IOrderItem);
+            ShowCustomization(selectedItem);  
+        }
+
+        private void ShowCustomization(IOrderItem item)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+
+            UserControl screen = null;
+
+            if(item is Entree e)
+            {
+                switch (e)
+                {
+                    case AngryChicken ac:
+                        screen = new AngryChickenCustomization(ac);
+                        break;
+                    case CowpokeChili cc:
+                        screen = new CowpokeChiliCustomization();
+                        screen.DataContext = cc;
+                        break;
+                    case DakotaDoubleBurger ddb:
+                        screen = new DakotaDoubleBurgerCustomization();
+                        break;
+                    case PecosPulledPork ppp:
+                        screen = new PecosPulledPorkCustomization();
+                        break;
+                    case RustlersRibs rr:
+                        break;
+                    case TexasTripleBurger ttb:
+                        screen = new TexasTripleBurgerCustomization();
+                        break;
+                    case Trailburger tb:
+                        screen = new TrailburgerCustomization();
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+            else if(item is Side side)
+            {
+                screen = new CustomizationScreens.SizeControl(side);
+            }
+            else if(item is Drink drink)
+            {
+                switch (drink)
+                {
+                    case CowboyCoffee cc:
+                        screen = new CowboyCoffeeCustomization();
+                        break;
+                    case JerkedSoda js:
+                        screen = new JerkedSodaCustomization();
+                        break;
+                    case TexasTea tt:
+                        screen = new TexasTeaCustomization();
+                        break;
+                    case Water w:
+                        screen = new WaterCustomization();
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+
+            if (screen != null)
+            {
+                screen.DataContext = item;
+                orderControl.CustomizationContainer.Child = screen;
+            }
         }
     }
 }

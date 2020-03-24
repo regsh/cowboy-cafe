@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale.CustomizationScreens
 {
@@ -21,6 +22,12 @@ namespace PointOfSale.CustomizationScreens
         public AngryChickenCustomization()
         {
             InitializeComponent();
+        }
+
+        public AngryChickenCustomization(AngryChicken ac)
+        {
+            InitializeComponent();
+            DataContext = ac;
         }
     }
 }

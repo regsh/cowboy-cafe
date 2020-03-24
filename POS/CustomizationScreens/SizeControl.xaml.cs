@@ -26,6 +26,13 @@ namespace PointOfSale.CustomizationScreens
             UpdateSizeDisplay();
             
         }
+
+        public SizeControl(IOrderItem side)
+        {
+            InitializeComponent();
+            DataContext = side;
+            UpdateSizeDisplay();
+        }
         /// <summary>
         /// Changes Radio button display so appropriate button is checked according to size of IOrderItem
         /// </summary>
