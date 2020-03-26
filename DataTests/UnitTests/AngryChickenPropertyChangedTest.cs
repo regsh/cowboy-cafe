@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * AngryChickenPropertyChangedTest.cs
+ * Author:Regan Hale (following Nathan Bean's YouTube video)
+ * Date: 3/26/20
+ * Purpose: To test AngryChicken's implementation of the INotifyPropertyChanged interface
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using CowboyCafe.Data;
