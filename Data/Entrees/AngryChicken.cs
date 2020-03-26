@@ -23,6 +23,7 @@ namespace CowboyCafe.Data
             set
             {
                 bread = value;
+                NotifyPropertyChanged("Bread");
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
@@ -37,6 +38,7 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                NotifyPropertyChanged("Pickle");
                 NotifyPropertyChanged("SpecialInstructions");
             }
         }
