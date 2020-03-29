@@ -25,6 +25,7 @@ namespace CowboyCafe.Data
                 decaf = value;
                 NotifyPropertyChanged("SpecialInstructions");
                 NotifyPropertyChanged("Name");
+                NotifyPropertyChanged("Decaf");
             }
         }
         private bool roomForCream = false;
@@ -38,6 +39,7 @@ namespace CowboyCafe.Data
             {
                 roomForCream = value;
                 NotifyPropertyChanged("SpecialInstructions");
+                NotifyPropertyChanged("RoomForCream");
             }
         }
 
@@ -52,6 +54,7 @@ namespace CowboyCafe.Data
             {
                 ice = value;
                 NotifyPropertyChanged("SpecialInstructions");
+                NotifyPropertyChanged("Ice");
             }
         }
 

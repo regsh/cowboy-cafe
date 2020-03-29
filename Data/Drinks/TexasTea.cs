@@ -25,6 +25,8 @@ namespace CowboyCafe.Data
                 sweet = value;
                 NotifyPropertyChanged("Sweet");
                 NotifyPropertyChanged("Name");
+                NotifyPropertyChanged("Calories");
+            
             }
         }
 

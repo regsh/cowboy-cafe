@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Represents an order of Jerked Soda
+    /// Represents an order of Jerked Soda, CreamSoda by default
     /// </summary>
     public class JerkedSoda : Drink
     {
