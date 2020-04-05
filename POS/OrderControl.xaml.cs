@@ -31,8 +31,7 @@ namespace PointOfSale
 
         public void CompleteOrderBtn_Click(object sender, EventArgs e)
         {
-            this.DataContext = new Order();
-            CustomizationContainer.Child = new MenuItemSelectionControl();
+            CustomizationContainer.Child = new TransactionControl((Order)this.DataContext);
         }
 
         public void ItemSelectionBtn_Click(object sender, EventArgs e)
