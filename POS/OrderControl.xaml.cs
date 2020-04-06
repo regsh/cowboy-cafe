@@ -7,6 +7,7 @@ using CowboyCafe.Data;
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using CashRegister;
 
 
 namespace PointOfSale
@@ -16,11 +17,15 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        public CashDrawer CashDrawer { get; } = new CashDrawer();
+
+        public Order CurrentOrder { get; set; }
+        
         public OrderControl()
         {
             InitializeComponent();
-
-            this.DataContext = new Order();
+            CurrentOrder = new Order();
+            this.DataContext = CurrentOrder;
         }
 
         public void CancelOrderBtn_Click(object sender, EventArgs e)

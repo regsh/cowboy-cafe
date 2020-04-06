@@ -38,7 +38,7 @@ namespace PointOfSale
                     try
                     {
                         Order currentOrder = (Order)this.DataContext;
-                        currentOrder.Items.Remove(item);
+                        currentOrder.Remove(item);
                     }
                     catch
                     {

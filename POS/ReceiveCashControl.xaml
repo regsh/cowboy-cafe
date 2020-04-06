@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="PointOfSale.ReceiveCashControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="BillButton">
+            <Setter Property="Background" Value="YellowGreen"/>
+            <Setter Property="BorderBrush" Value="Green"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Margin" Value="5,15"/>
+        </Style>
+        <Style TargetType="Button" x:Key="CoinButton">
+            <Setter Property="Background" Value="Goldenrod"/>
+            <Setter Property="BorderBrush" Value="DarkGoldenrod"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="Margin" Value="15,15"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Click each bill/coin to enter change received.</TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="20,0" FontWeight="Bold">Total Received:</TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="20,0" FontWeight="Bold" Text="{Binding Path=CashReceived, StringFormat='c'}"/>
+            <Button Padding="2" Click="AddToDrawerClicked">Add to Drawer</Button>
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="OneBtn" Grid.Column="0" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Ones" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="0" Grid.Row="1" Text="{Binding Path=Ones}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="TwoBtn" Grid.Column="1" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Twos" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="1" Grid.Row="1" Text="{Binding Path=Twos}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="FiveBtn" Grid.Column="2" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Fives" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="2" Grid.Row="1" Text="{Binding Path=Fives}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="TenBtn" Grid.Column="3" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Tens" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox  Grid.Column ="3" Grid.Row="1" Text="{Binding Path=Tens}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="TwentyBtn" Grid.Column="4" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Twenties" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="4" Grid.Row="1" Text="{Binding Path=Twenties}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="FiftyBtn" Grid.Column="5" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Fifties" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="5" Grid.Row="1" Text="{Binding Path=Fifties}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Name="HundredBtn" Grid.Column="6" Grid.Row="0" Style="{DynamicResource BillButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Hundreds" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="6" Grid.Row="1" Text="{Binding Path=Hundreds}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button  Name="PennyBtn" Grid.Column="0" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Pennies" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox  Grid.Column ="0" Grid.Row="1" Text="{Binding Path=Pennies}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button  Name="NickelBtn" Grid.Column="1" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Nickels" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="1" Grid.Row="1" Text="{Binding Path=Nickels}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button  Name="DimeBtn" Grid.Column="2" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Dimes" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="2" Grid.Row="1" Text="{Binding Path=Dimes}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button  Name="QuarterBtn" Grid.Column="3" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Quarters" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="3" Grid.Row="1" Text="{Binding Path=Quarters}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button  Name="HalfDollarBtn" Grid.Column="4" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="HalfDollars" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="4" Grid.Row="1" Text="{Binding Path=HalfDollars}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Button  Name="DollarBtn" Grid.Column="5" Grid.Row="0" Style="{DynamicResource CoinButton}" Click="OnCurrencyClicked">
+                <TextBlock Text="Dollars" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <TextBox Grid.Column ="5" Grid.Row="1" Text="{Binding Path=Dollars}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        </Grid>
+    </Grid>
+</UserControl>

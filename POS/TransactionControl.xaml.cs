@@ -26,7 +26,8 @@ namespace PointOfSale
             {
                 if (DataContext is Order myOrder)
                 {
-                    return myOrder.Subtotal * 0.16;
+                    double tax = myOrder.Subtotal * 0.16;
+                    return Math.Round(tax, 2);
                 }
                 else return 0;
             }
@@ -55,35 +56,6 @@ namespace PointOfSale
             DataContext = o;
             TaxTxtBk.Text = Tax.ToString("C");
             TotalTxtBk.Text = Total.ToString("C");
-
-        }
-
-        public void CreditCardPaymentBtn_Clicked(object sender, RoutedEventArgs e) 
-        {
-            CardTerminal terminal = new CardTerminal();
-            switch (terminal.ProcessTransaction(Total))
-            {
-                case ResultCode.Success:
-                    PrintReceipt();
-                    break;
-                case ResultCode.InsufficentFunds:
-                    MessageBox.Show("Insufficient funds. Please submit another form of payment.");
-                    break;
-                case ResultCode.CancelledCard:
-                    MessageBox.Show("Cancelled card. Please submit another form of payment.");
-                    break;
-                case ResultCode.ReadError:
-                    MessageBox.Show("Read error. Please try again.");
-                    break;
-                case ResultCode.UnknownErrror:
-                    MessageBox.Show("An error occurred. Please try again;");
-                    break;
-            }
-        }
-
-        public void CashPaymentBtn_Clicked(object sender, RoutedEventArgs e)
-        {
-
         }
 
         public void PrintReceipt()
