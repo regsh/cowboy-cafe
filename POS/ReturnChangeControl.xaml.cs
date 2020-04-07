@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Controls;
 using System.ComponentModel;
+using System.Windows;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -10,6 +12,10 @@ namespace PointOfSale
     /// </summary>
     public partial class ReturnChangeControl : UserControl, INotifyPropertyChanged
     {
+        public event EventHandler CashTransactionCompleted;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double totalOwed;
         public double TotalOwed
         {
@@ -21,7 +27,7 @@ namespace PointOfSale
 
         public double OutstandingBalance;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private CashDrawer CashDrawer { get; set; }
 
         public int OnesOwed { get; set; }
         public int TwosOwed { get; set; }
@@ -37,20 +43,16 @@ namespace PointOfSale
         public int HalfDollarsOwed { get; set; }
         public int DollarsOwed { get; set; }
 
-        public ReturnChangeControl()
-        {
-            InitializeComponent();
-        }
-
         public ReturnChangeControl(double totalChangeOwed, CashDrawer drawer)
         {
             InitializeComponent();
             DataContext = this;
+            CashDrawer = drawer;
             TotalOwed = totalChangeOwed;
             OutstandingBalance = TotalOwed;
 
             HundredsOwed = Math.Min(CalculateBillsOwed(100), drawer.Hundreds);
-            OutstandingBalance -= (HundredsOwed * 100);
+            OutstandingBalance -= HundredsOwed * 100;
 
             FiftiesOwed = Math.Min(CalculateBillsOwed(50), drawer.Fifties);
             OutstandingBalance -= (FiftiesOwed * 50);
@@ -90,6 +92,32 @@ namespace PointOfSale
         {
             int quantity = Convert.ToInt32(Math.Floor(OutstandingBalance / denominationValue));
             return quantity;
+        }
+
+        public void FinishClicked(object sender, RoutedEventArgs e)
+        {
+            GiveChange();
+            CashTransactionCompleted?.Invoke(this, new RoutedEventArgs());
+            OrderControl oc = ExtensionMethods.ExtensionMethods.FindAncestor<OrderControl>(this);
+            oc.DataContext = new Order();
+            oc.CustomizationContainer.Child = new MenuItemSelectionControl();
+        }
+
+        public void GiveChange()
+        {
+            CashDrawer.RemoveBill(Bills.One, OnesOwed);
+            CashDrawer.RemoveBill(Bills.Five, FivesOwed);
+            CashDrawer.RemoveBill(Bills.Ten, TensOwed);
+            CashDrawer.RemoveBill(Bills.Twenty, TwentiesOwed);
+            CashDrawer.RemoveBill(Bills.Fifty, FiftiesOwed);
+            CashDrawer.RemoveBill(Bills.Hundred, HundredsOwed);
+
+            CashDrawer.RemoveCoin(Coins.Penny, PenniesOwed);
+            CashDrawer.RemoveCoin(Coins.Nickel, NickelsOwed);
+            CashDrawer.RemoveCoin(Coins.Dime, DimesOwed);
+            CashDrawer.RemoveCoin(Coins.Quarter, QuartersOwed);
+            CashDrawer.RemoveCoin(Coins.HalfDollar, HalfDollarsOwed);
+            CashDrawer.RemoveCoin(Coins.Dollar, DollarsOwed);
         }
     }
 }

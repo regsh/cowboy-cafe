@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CashRegister;
+using CowboyCafe.Data;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CowboyCafe.Data;
-using CashRegister;
 
 namespace PointOfSale
 {
@@ -53,14 +44,70 @@ namespace PointOfSale
         public TransactionControl(Order o)
         {
             InitializeComponent();
+            PaymentOptionsControl.CreditTransactionCompleted += PaymentOptionsControl_CreditTransactionCompleted;
+            PaymentOptionsControl.PayByCash += PaymentOptionsControl_PayByCash;
             DataContext = o;
             TaxTxtBk.Text = Tax.ToString("C");
             TotalTxtBk.Text = Total.ToString("C");
         }
 
-        public void PrintReceipt()
+        private void PaymentOptionsControl_PayByCash(object sender, EventArgs e)
         {
+            ReceiveCashControl receiveCash = new ReceiveCashControl();
+            receiveCash.CashAdded += ReceiveCash_CashAdded;
+            PaymentMethodBorder.Child = receiveCash;
+        }
+
+        private void ReceiveCash_CashAdded(object sender, CashEventArgs e)
+        {
+            ReturnChangeControl returnChange = new ReturnChangeControl(e.Change, e.CashDrawer);
+            returnChange.CashTransactionCompleted += ReturnChange_CashTransactionCompleted;
+            PaymentMethodBorder.Child = returnChange;
+        }
+
+        private void ReturnChange_CashTransactionCompleted(object sender, EventArgs e)
+        {
+            PrintReceipt("Cash");
+        }
+
+        private void PaymentOptionsControl_CreditTransactionCompleted(object sender, EventArgs e)
+        {
+            PrintReceipt("Credit Card");
+        }
+
+        public void PrintReceipt(string paymentMethod)
+        {
+            ReceiptPrinter printer = new ReceiptPrinter();
+            printer.Print(TransactionToString(paymentMethod));
             MessageBox.Show("Receipt is printing.");
+        }
+
+        public string TransactionToString(string transactionType)
+        {
+            string result = "";
+            string newLine = Environment.NewLine;
+            if (DataContext is Order myOrder)
+            {
+                result += newLine;
+                result += (myOrder.ToString() + newLine);
+                result += $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}{newLine}";
+                foreach (IOrderItem item in myOrder.Items)
+                {
+                    result += $"{item.Name} {item.Price.ToString("C")}{newLine}";
+                    if (item.SpecialInstructions != null)
+                    {
+                        foreach (string s in item.SpecialInstructions)
+                        {
+                            result += $" - {s}{newLine}";
+                        }
+                    }
+                }
+                result += $"Subtotal {myOrder.Subtotal.ToString("C")}{newLine}";
+                result += $"Tax {Tax.ToString("C")}{newLine}";
+                result += $"Total {Total.ToString("C")}{newLine}";
+                result += $"Payment by {transactionType}";
+            }
+            return result;
         }
     }
 }

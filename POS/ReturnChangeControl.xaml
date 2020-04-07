@@ -30,7 +30,7 @@
             <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Return the change indicated to the customer.</TextBlock>
             <TextBlock VerticalAlignment="Center" Margin="20,0" FontWeight="Bold">Total Change to Dispense:</TextBlock>
             <TextBlock VerticalAlignment="Center" Margin="20,0" FontWeight="Bold" Text="{Binding Path=TotalOwed}"/>
-            <Button Padding="2">Finish</Button>
+            <Button Padding="2" Click="FinishClicked">Finish</Button>
         </StackPanel>
 
         <Grid Grid.Row="1">

@@ -30,7 +30,7 @@
             <TextBlock x:Name="TotalTxtBk" Grid.Row="2" Grid.Column="1" FontSize="25" VerticalAlignment="Center"/>
         </Grid>
         <Border Name="PaymentMethodBorder" Grid.Row="1">
-            <local:PaymentOptions/>
+            <local:PaymentOptions x:Name="PaymentOptionsControl"/>
         </Border>
     </Grid>
 </UserControl>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\DataTests\\DataTests.csproj": {}
+    "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\DataTests\\DataTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\DataTests\\DataTests.csproj": {
+    "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\DataTests\\DataTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\DataTests\\DataTests.csproj",
+        "projectUniqueName": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\DataTests\\DataTests.csproj",
         "projectName": "CowboyCafe.DataTests",
-        "projectPath": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\DataTests\\DataTests.csproj",
+        "projectPath": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\DataTests\\DataTests.csproj",
         "packagesPath": "C:\\Users\\18284\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\DataTests\\obj\\",
+        "outputPath": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\DataTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\Data.csproj"
+              "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\Data.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\Data.csproj": {
+    "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\Data.csproj",
         "projectName": "CowboyCafe.Data",
-        "projectPath": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\18284\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\18284\\source\\repos\\cowboy-cafe\\Data\\obj\\",
+        "outputPath": "C:\\Users\\18284\\Source\\Repos\\cowboy-cafe\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

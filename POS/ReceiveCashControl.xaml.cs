@@ -1,4 +1,5 @@
 ﻿using CashRegister;
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ReceiveCashControl : UserControl, INotifyPropertyChanged
     {
+        public event EventHandler<CashEventArgs> CashAdded;
         public double CashReceived { get; set; }
 
         public double OrderTotal
@@ -261,9 +263,10 @@ namespace PointOfSale
                 drawer.AddCoin(Coins.Quarter, Quarters);
                 drawer.AddCoin(Coins.HalfDollar, HalfDollars);
                 drawer.AddCoin(Coins.Dollar, Dollars);
-
-                (ExtensionMethods.ExtensionMethods.FindAncestor<TransactionControl>(this)).PaymentMethodBorder.Child = new ReturnChangeControl(CashReceived - OrderTotal, drawer);
+                CashAdded?.Invoke(this, new CashEventArgs(CashReceived - OrderTotal, drawer));
             }
         }
+
+
     }
 }

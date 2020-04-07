@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CashRegister;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -19,13 +20,14 @@ namespace PointOfSale
     /// </summary>
     public partial class PaymentOptions : UserControl
     {
+        public event EventHandler CreditTransactionCompleted;
 
+        public event EventHandler PayByCash;
         public PaymentOptions()
         {
             InitializeComponent();
 
         }
-
 
         public void CreditCardPaymentBtn_Clicked(object sender, RoutedEventArgs e)
         {
@@ -34,7 +36,10 @@ namespace PointOfSale
             switch (terminal.ProcessTransaction(total))
             {
                 case ResultCode.Success:
-                    PrintReceipt();
+                    CreditTransactionCompleted?.Invoke(this, new RoutedEventArgs());
+                    OrderControl oc = ExtensionMethods.ExtensionMethods.FindAncestor<OrderControl>(this);
+                    oc.DataContext = new Order();
+                    oc.CustomizationContainer.Child = new MenuItemSelectionControl();
                     break;
                 case ResultCode.InsufficentFunds:
                     MessageBox.Show("Insufficient funds. Please submit another form of payment.");
@@ -53,13 +58,7 @@ namespace PointOfSale
 
         public void CashPaymentBtn_Clicked(object sender, RoutedEventArgs e)
         {
-            ((TransactionControl)ExtensionMethods.ExtensionMethods.FindAncestor<TransactionControl>(this)).PaymentMethodBorder.Child = new ReceiveCashControl();
+            PayByCash?.Invoke(this, new RoutedEventArgs());
         }
-
-        public void PrintReceipt()
-        {
-            MessageBox.Show("receipt is printing;");
-        }
-
     }
 }

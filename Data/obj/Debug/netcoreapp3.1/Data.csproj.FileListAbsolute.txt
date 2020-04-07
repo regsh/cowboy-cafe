@@ -12,4 +12,3 @@ C:\Users\18284\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp3.1\Data.Assemb
 C:\Users\18284\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
 C:\Users\18284\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp3.1\CowboyCafe.Data.dll
 C:\Users\18284\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp3.1\CowboyCafe.Data.pdb
-C:\Users\18284\Source\Repos\cowboy-cafe\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
