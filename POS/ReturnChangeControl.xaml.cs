@@ -87,7 +87,7 @@ namespace PointOfSale
             PenniesOwed = Math.Min(CalculateBillsOwed(0.01), drawer.Pennies);
             OutstandingBalance -= (PenniesOwed * .01);
 
-            if (Math.Round(OutstandingBalance,2) > 0) throw new DrawerOverdrawException();
+            if (Math.Round(OutstandingBalance,2) > 0.01) throw new DrawerOverdrawException();
         }
 
         public int CalculateBillsOwed(double denominationValue)
