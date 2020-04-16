@@ -4,16 +4,40 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Cowboy Cafe</h1>
-    <p>
-        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
-        Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. 
-        Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! 
-        You’ve had a hard ride - so take it easy with us.
-    </p>
+    <div class="text-center">
+        <h1 class="display-4">Cowboy Cafe</h1>
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+            You’ve had a hard ride - so take it easy with us.
+        </p>
 
-    <h2>Entrees</h2>
-    <h2>Sides</h2>
-    <h2>Drinks</h2>
-</div>
+        <h2>Entrees</h2>
+        @foreach (IOrderItem item in Menu.Entrees())
+        {
+            <div class="menu-item">
+                <div class="item-name">@item.Name</div>
+                <div class="item-price">@item.Price</div>
+                <div class="item-calories">@item.Calories</div>
+            </div>
+        }
+        <h2>Sides</h2>
+        @foreach (IOrderItem item in Menu.Sides())
+        {
+            <div class="menu-item">
+                <div class="item-name">@item.Name</div>
+                <div class="item-price">@item.Price</div>
+                <div class="item-calories">@item.Calories</div>
+            </div>
+        }
+        <h2>Drinks</h2>
+        @foreach (IOrderItem item in Menu.Drinks())
+        {
+            <div class="menu-item">
+                <div class="item-name">@item.Name</div>
+                <div class="item-price">@item.Price</div>
+                <div class="item-calories">@item.Calories</div>
+            </div>
+        }
+    </div>
