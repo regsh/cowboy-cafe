@@ -76,7 +76,34 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property holding the name for display in the order summary
         /// </summary>
-        public override string Name => ToString();
+        public override string Name
+        {
+            get
+            {
+                string result = Size.ToString();
+                switch (Flavor)
+                {
+                    case (SodaFlavor.CreamSoda):
+                        result += " Cream Soda";
+                        break;
+                    case (SodaFlavor.BirchBeer):
+                        result += " Birch Beer";
+                        break;
+                    case (SodaFlavor.OrangeSoda):
+                        result += " Orange Soda";
+                        break;
+                    case (SodaFlavor.RootBeer):
+                        result += " Root Beer";
+                        break;
+                    case (SodaFlavor.Sarsparilla):
+                        result += " Sarsparilla";
+                        break;
+                    default: throw new ArgumentException();
+                }
+                result += " Jerked Soda";
+                return result;
+            }
+        }
 
         /// <summary>
         /// Returns the size and flavor and name of the jerked soda as a string
@@ -84,28 +111,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string result = Size.ToString();
-            switch (Flavor)
-            {
-                case (SodaFlavor.CreamSoda):
-                    result += " Cream Soda";
-                    break;
-                case (SodaFlavor.BirchBeer):
-                    result += " Birch Beer";
-                    break;
-                case (SodaFlavor.OrangeSoda):
-                    result += " Orange Soda";
-                    break;
-                case (SodaFlavor.RootBeer):
-                    result += " Root Beer";
-                    break;
-                case (SodaFlavor.Sarsparilla):
-                    result += " Sarsparilla";
-                    break;
-                default: throw new ArgumentException();
-            }
-            result += " Jerked Soda";
-            return result;
+            return "Jerked Soda";
         }
     }
 }

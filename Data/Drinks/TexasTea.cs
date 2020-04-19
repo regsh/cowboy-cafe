@@ -102,7 +102,17 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property holding the name for display in the order summary
         /// </summary>
-        public override string Name => ToString();
+        public override string Name
+        {
+            get
+            {
+                string result = Size.ToString() + " Texas";
+                if (Sweet) result += " Sweet";
+                else result += " Plain";
+                result += " Tea";
+                return result;
+            }
+        }
 
         /// <summary>
         /// Returns a description of the drink including size as a string
@@ -110,11 +120,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string result = Size.ToString() + " Texas";
-            if (Sweet) result += " Sweet";
-            else result += " Plain";
-            result += " Tea";
-            return result;
+            return "Texas Tea";
         }
 
 

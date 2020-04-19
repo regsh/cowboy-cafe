@@ -54,7 +54,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property holding the name for display in the order summary
         /// </summary>
-        public override string Name => ToString();
+        public override string Name => Size.ToString() + " Water";
 
         /// <summary>
         /// Returns a description of the drink with size as a string
@@ -62,7 +62,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return Size.ToString() + " Water";
+            return "Water";
         }
 
     }

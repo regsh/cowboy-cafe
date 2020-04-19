@@ -29,6 +29,8 @@ namespace Website
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //could replace this with false statement or false || to enable testing
+            //false || env.IsDevelopment()
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

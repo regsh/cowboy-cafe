@@ -15,6 +15,8 @@ namespace CowboyCafe.DataTests.UnitTests
 
         public string Name { get; set; } = "MockItem";
 
+        public uint Calories { get => 100; }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -109,14 +109,20 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property holding the name for display in the order summary
         /// </summary>
-        public override string Name => ToString();
+        public override string Name
+        {
+            get
+            {
+                string result = Size.ToString();
+                if (Decaf) result += " Decaf";
+                result += " Cowboy Coffee";
+                return result;
+            }
+        }
 
         public override string ToString()
         {
-            string result = Size.ToString();
-            if (Decaf) result += " Decaf";
-            result += " Cowboy Coffee";
-            return result;
+            return "Cowboy Coffee";
         }
     }
 }

@@ -89,10 +89,10 @@ C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp3.1\zh-Han
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp3.1\CowboyCafe.Data.dll
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\bin\Debug\netcoreapp3.1\CowboyCafe.Data.pdb
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.csprojAssemblyReference.cache
+C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.csproj.CoreCompileInputs.cache
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.AssemblyInfoInputs.cache
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.AssemblyInfo.cs
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.csproj.CopyComplete
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\CowboyCafe.DataTests.dll
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\CowboyCafe.DataTests.pdb
-C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.csproj.CoreCompileInputs.cache
 C:\Users\18284\Source\Repos\cowboy-cafe\DataTests\obj\Debug\netcoreapp3.1\DataTests.genruntimeconfig.cache
