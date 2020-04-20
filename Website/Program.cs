@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+/*
+ * Program.cs
+ * Template by VS2019
+ * Edited by: Regan Hale
+ * Purpose: Handles the hosting of the website
+ */
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Website
 {

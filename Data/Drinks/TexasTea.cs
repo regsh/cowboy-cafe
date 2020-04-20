@@ -115,7 +115,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Returns a description of the drink including size as a string
+        /// Basic string describing the drink
         /// </summary>
         /// <returns></returns>
         public override string ToString()

@@ -119,7 +119,10 @@ namespace CowboyCafe.Data
                 return result;
             }
         }
-
+        /// <summary>
+        /// Basic string describing the drink
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Cowboy Coffee";

@@ -106,7 +106,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Returns the size and flavor and name of the jerked soda as a string
+        /// Basic string describing the drink
         /// </summary>
         /// <returns></returns>
         public override string ToString()

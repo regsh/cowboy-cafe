@@ -57,7 +57,7 @@ namespace CowboyCafe.Data
         public override string Name => Size.ToString() + " Water";
 
         /// <summary>
-        /// Returns a description of the drink with size as a string
+        /// Basic string describing the drink
         /// </summary>
         /// <returns></returns>
         public override string ToString()

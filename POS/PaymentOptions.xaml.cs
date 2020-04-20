@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+ * PaymentOptions.xaml.cs
+ * Author:Regan Hale
+ * Purpose: Code behind for user control to select between cash and credit card payment options
+ */
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CashRegister;
 using CowboyCafe.Data;
 
@@ -23,16 +20,22 @@ namespace PointOfSale
         public event EventHandler CreditTransactionCompleted;
 
         public event EventHandler PayByCash;
+        
         public PaymentOptions()
         {
             InitializeComponent();
-
         }
-
+        /// <summary>
+        /// Handles click event on the Credit Card payment option button by instantiating an CardTerminal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void CreditCardPaymentBtn_Clicked(object sender, RoutedEventArgs e)
         {
             CardTerminal terminal = new CardTerminal();
             double total = ((TransactionControl)ExtensionMethods.ExtensionMethods.FindAncestor<TransactionControl>(this)).Total;
+            
+            //Possible results from running total balance for order on terminal
             switch (terminal.ProcessTransaction(total))
             {
                 case ResultCode.Success:
@@ -55,7 +58,11 @@ namespace PointOfSale
                     break;
             }
         }
-
+        /// <summary>
+        /// Handles click event on "Cash" payment option button by invoking PayByCash event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void CashPaymentBtn_Clicked(object sender, RoutedEventArgs e)
         {
             PayByCash?.Invoke(this, new RoutedEventArgs());

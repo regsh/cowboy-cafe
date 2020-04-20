@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Returns string with description of the side with size
+        /// Returns the size the name of the side as a string
         /// </summary>
         /// <returns></returns>
         public override string ToString()

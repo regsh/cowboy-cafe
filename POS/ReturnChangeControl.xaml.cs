@@ -1,4 +1,10 @@
-﻿using CashRegister;
+﻿/*
+ * ReturnChangeControl.xaml.cs
+ * Author: Regan Hale
+ * Purpose: Code behind for control that displays the amount of cash to return to customer in appropriate denominations
+ */
+
+using CashRegister;
 using System;
 using System.Windows.Controls;
 using System.ComponentModel;
@@ -42,7 +48,12 @@ namespace PointOfSale
         public int QuartersOwed { get; set; }
         public int HalfDollarsOwed { get; set; }
         public int DollarsOwed { get; set; }
-
+        
+        /// <summary>
+        /// Calculates appropriate change to return to customer based on contents of CashDrawer and displays in a ReturnChangeControl
+        /// </summary>
+        /// <param name="totalChangeOwed"></param>
+        /// <param name="drawer"></param>
         public ReturnChangeControl(double totalChangeOwed, CashDrawer drawer)
         {
             InitializeComponent();
@@ -89,13 +100,21 @@ namespace PointOfSale
 
             if (Math.Round(OutstandingBalance,2) > 0.01) throw new DrawerOverdrawException();
         }
-
-        public int CalculateBillsOwed(double denominationValue)
+        /// <summary>
+        /// Calculates the number of bills of given denomination value for returning change to customer
+        /// </summary>
+        /// <param name="denominationValue">value of denomination being counted</param>
+        /// <returns>number of bills/coins owed</returns>
+        private int CalculateBillsOwed(double denominationValue)
         {
             int quantity = Convert.ToInt32(Math.Floor(OutstandingBalance / denominationValue));
             return quantity;
         }
-
+        /// <summary>
+        /// Handles a click event on the Finish button to indicate the change was returned
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void FinishClicked(object sender, RoutedEventArgs e)
         {
             GiveChange();
@@ -104,7 +123,9 @@ namespace PointOfSale
             oc.DataContext = new Order();
             oc.CustomizationContainer.Child = new MenuItemSelectionControl();
         }
-
+        /// <summary>
+        /// Decrements the CashDrawer according to the number of each denomination calculated as owed to the customer
+        /// </summary>
         public void GiveChange()
         {
             CashDrawer.RemoveBill(Bills.One, OnesOwed);

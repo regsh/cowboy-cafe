@@ -1,4 +1,9 @@
-﻿using CashRegister;
+﻿/*
+ * ReceiveCashControl.xaml.cs
+ * Author: Regan Hale
+ * Purpose: Code behind control for selecting cash amount and denominations provided by a customer for an order
+ */
+using CashRegister;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -12,6 +17,7 @@ namespace PointOfSale
     public partial class ReceiveCashControl : UserControl, INotifyPropertyChanged
     {
         public event EventHandler<CashEventArgs> CashAdded;
+        
         public double CashReceived { get; set; }
 
         public double OrderTotal
@@ -190,7 +196,12 @@ namespace PointOfSale
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// Invoked when any denomination is selected in the control
+        /// Responds by incrementing appropriate denomination and updating total received
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCurrencyClicked(object sender, RoutedEventArgs e)
         {
             if (sender is Button b)
@@ -240,7 +251,12 @@ namespace PointOfSale
                 }
             }
         }
-
+        /// <summary>
+        /// Handles a click event on AddToDrawer button by verifying sufficient cash has been received
+        /// If sufficient, adds cash to static CashDrawer and invokes CashAdded event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AddToDrawerClicked(object sender, RoutedEventArgs e)
         {
             if (OrderTotal > CashReceived)

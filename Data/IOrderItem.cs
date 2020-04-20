@@ -23,7 +23,9 @@ namespace CowboyCafe.Data
         /// Property to hold the name of the item, added so side and drink displays update with size changes
         /// </summary>
         string Name { get; }
-
+        /// <summary>
+        /// The caloric content of the item
+        /// </summary>
         uint Calories { get; }
     }
 }
