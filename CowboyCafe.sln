@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	ProjectSection(SolutionItems) = preProject
 		CowboyCafe.DataUML.pdf = CowboyCafe.DataUML.pdf
 		CowboyCafe.PointOfSaleUML.pdf = CowboyCafe.PointOfSaleUML.pdf
+		CowboyCafe.WebsiteUML.pdf = CowboyCafe.WebsiteUML.pdf
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "POS\PointOfSale.csproj", "{FD2D685C-FBE4-4D13-ACFC-1B6C4524CA81}"
