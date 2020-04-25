@@ -14,6 +14,16 @@ namespace CowboyCafe.Data
     /// </summary>
     public static class Menu
     {
+        public static string[] MenuItemTypes
+        {
+            get => new string[]
+            {
+            "Entree",
+            "Side",
+            "Drink"
+            };
+        }
+
         /// <summary>
         /// Returns IEnumerable containing instance of all CowboyCafe entrees
         /// </summary>
