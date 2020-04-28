@@ -15,8 +15,8 @@
 
         <form id="menu-filter">
             <div id="search">
-                <input type="text" name="SearchTerms" value="@Model.SearchTerms"/>
-                <input type="submit" value="Search"/>
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+                <input type="submit" value="Search" />
             </div>
 
             <div id="filters">
@@ -46,65 +46,74 @@
             </div>
         </form>
 
-        <h2>Entrees</h2>
-        @foreach (IOrderItem item in Menu.Entrees())
+
+        @if (Model.Entrees != null)
         {
-            <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center">
-                <h5>@item.Name</h5>
-                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                <div style=" margin:10px">@item.Price.ToString("C")</div>
-            </div>
-        }
-        <h2>Sides</h2>
-        @foreach (IOrderItem item in Menu.Sides())
-        {
-            <h5>@item.ToString()</h5>
-            <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                <p>Small</p>
-                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                <div style=" margin:10px">@item.Price.ToString("C")</div>
-            </div>
-            @if (item is Side side)
+            <h2>Entrees</h2>
+            @foreach (IOrderItem item in Model.Entrees)
             {
-                side.Size = Size.Medium;
-             <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                    <p>Medium</p>
+                <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center">
+                    <h5>@item.Name</h5>
                     <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                     <div style=" margin:10px">@item.Price.ToString("C")</div>
-              </div>
-                side.Size = Size.Large;
-              <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                    <p>Large</p>
+                </div>
+            }
+        }
+        @if (Model.Sides != null)
+        {
+            <h2>Sides</h2>
+            @foreach (IOrderItem item in Model.Sides)
+            {
+                <h5>@item.ToString()</h5>
+                <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                    <p>Small</p>
                     <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                     <div style=" margin:10px">@item.Price.ToString("C")</div>
-              </div>
+                </div>
+                @if (item is Side side)
+                {
+                    side.Size = Size.Medium;
+                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                        <p>Medium</p>
+                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                    </div>
+                    side.Size = Size.Large;
+                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                        <p>Large</p>
+                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                    </div>
+                }
             }
         }
 
-
-        <h2>Drinks</h2>
-        @foreach (IOrderItem item in Menu.Drinks())
+        @if (Model.Drinks != null)
         {
-            <h5>@item.ToString()</h5>
-            <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                <p>Small</p>
-                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                <div style=" margin:10px">@item.Price.ToString("C")</div>
-            </div>
-            @if (item is Drink drink)
+            <h2>Drinks</h2>
+            @foreach (IOrderItem item in Menu.Drinks())
             {
-                drink.Size = Size.Medium;
+                <h5>@item.ToString()</h5>
                 <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                    <p>Medium</p>
+                    <p>Small</p>
                     <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                     <div style=" margin:10px">@item.Price.ToString("C")</div>
                 </div>
-                drink.Size = Size.Large;
-                <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
-                    <p>Large</p>
-                    <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                    <div style=" margin:10px">@item.Price.ToString("C")</div>
-                </div>
+                @if (item is Drink drink)
+                {
+                    drink.Size = Size.Medium;
+                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                        <p>Medium</p>
+                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                    </div>
+                    drink.Size = Size.Large;
+                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                        <p>Large</p>
+                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                    </div>
+                }
             }
         }
     </div>
