@@ -104,8 +104,35 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             Assert.Equal(4, Menu.Drinks().Count());
         }
-
-
-
+        [Theory]
+        [InlineData(typeof(AngryChicken))]
+        [InlineData(typeof(CowpokeChili))]
+        [InlineData(typeof(DakotaDoubleBurger))]
+        [InlineData(typeof(PecosPulledPork))]
+        [InlineData(typeof(RustlersRibs))]
+        [InlineData(typeof(TexasTripleBurger))]
+        [InlineData(typeof(Trailburger))]
+        [InlineData(typeof(CowboyCoffee))]
+        [InlineData(typeof(JerkedSoda))]
+        [InlineData(typeof(TexasTea))]
+        [InlineData(typeof(Water))]
+        [InlineData(typeof(BakedBeans))]
+        [InlineData(typeof(PanDeCampo))]
+        [InlineData(typeof(CornDodgers))]
+        [InlineData(typeof(ChiliCheeseFries))]
+        public void CompleteMenuShouldContainAllMenuItems(Type type)
+        {
+            var types = new List<Type>();
+            foreach (IOrderItem item in Menu.CompleteMenu())
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
+        [Fact]
+        public void CompleteMenuShouldContainExactlyFifteenItems()
+        {
+            Assert.Equal(15, Menu.CompleteMenu().Count());
+        }
     }
 }
