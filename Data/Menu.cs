@@ -93,8 +93,8 @@ namespace CowboyCafe.Data
         {
             List<IOrderItem> results = new List<IOrderItem>();
 
-            if (terms == null) return CompleteMenu();
-            foreach(IOrderItem item in CompleteMenu())
+            if (terms == null) return items;
+            foreach(IOrderItem item in items)
             {
                 if(item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
                 {

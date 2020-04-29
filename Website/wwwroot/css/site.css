@@ -1,10 +1,18 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('site.css');
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+}
+
+h2{
+    text-align: center;
+}
+h5{
+    text-align:center;
 }
 
 /* Provide sufficient contrast against white background */
@@ -72,12 +80,24 @@ body {
 
 /* Menu formatting
 -------------------------------------------------- */
-
-.item-name{
+#menu-page {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
 }
-.item-calories {
+#welcome{
+    grid-column:2;
 }
-.item-price{
-
+#menu-filter{
+    grid-column:1;
+}
+#filters{
+    grid-column:2;
 }
 
+.item-display {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center
+}

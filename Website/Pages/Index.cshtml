@@ -4,7 +4,8 @@
     ViewData["Title"] = "Home Page";
 }
 
-    <div class="text-center">
+<div id="menu-page">
+    <div id="welcome" style="text-align:center">
         <h1 class="display-4">Cowboy Cafe</h1>
         <p>
             We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
@@ -12,47 +13,52 @@
             Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
             You’ve had a hard ride - so take it easy with us.
         </p>
+    </div>
 
-        <form id="menu-filter">
-            <div id="search">
-                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-                <input type="submit" value="Search" />
-            </div>
+    <form id="menu-filter">
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
 
-            <div id="filters">
-                <h4>Type</h4>
-                @foreach (String type in Menu.MenuItemTypes)
+        <div id="filters">
+            <div id="item-type">
+                <h4>Category</h4>
+                @foreach (string type in Menu.MenuItemTypes)
                 {
                     <label>
-                        <input type="checkbox" name="ItemType" value="@type" checked="@Model.ItemType.Contains(type)" />
+                        <input type="checkbox" name="ItemType" value=@type checked="@Model.ItemType.Contains(type)" />
                         @type
                     </label>
                 }
-
-                <h4>Calories</h4>
-                <div>
-                    Between
-                    <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" />
-                    and
-                    <input name="CalorieMax" type="number" min="0" max="700" step="5" placeholder="max" value="@Model.CalorieMax" />
-                </div>
-                <h4>Price</h4>
-                <div>
-                    Between
-                    <input name="PriceMin" type="number" min="0" max="8.00" step=".01" placeholder="min" value="@Model.PriceMin" />
-                    and
-                    <input name="PriceMax" type="number" min="0" max="8.00" step=".01" placeholder="max" value="@Model.PriceMax" />
-                </div>
             </div>
-        </form>
 
 
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" />
+                and
+                <input name="CalorieMax" type="number" min="0" max="700" step="5" placeholder="max" value="@Model.CalorieMax" />
+            </div>
+            <h4>Price</h4>
+            <div>
+                Between
+                <input name="PriceMin" type="number" min="0" max="8.00" step=".01" placeholder="min" value="@Model.PriceMin" />
+                and
+                <input name="PriceMax" type="number" min="0" max="8.00" step=".01" placeholder="max" value="@Model.PriceMax" />
+            </div>
+        </div>
+    </form>
+
+    <div class="menu">
         @if (Model.Entrees != null)
         {
             <h2>Entrees</h2>
             @foreach (IOrderItem item in Model.Entrees)
             {
-                <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center">
+                <!-- <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center"> -->
+                <div class="item-display">
                     <h5>@item.Name</h5>
                     <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                     <div style=" margin:10px">@item.Price.ToString("C")</div>
@@ -61,11 +67,11 @@
         }
         @if (Model.Sides != null)
         {
-            <h2>Sides</h2>
+            <h2 style="text-align:center">Sides</h2>
             @foreach (IOrderItem item in Model.Sides)
             {
                 <h5>@item.ToString()</h5>
-                <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                <div class="item-display" style="margin-left:20px">
                     <p>Small</p>
                     <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                     <div style=" margin:10px">@item.Price.ToString("C")</div>
@@ -73,15 +79,15 @@
                 @if (item is Side side)
                 {
                     side.Size = Size.Medium;
-                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                    <div class="item-display" style="margin-left:20px">
                         <p>Medium</p>
                         <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
                         <div style=" margin:10px">@item.Price.ToString("C")</div>
                     </div>
                     side.Size = Size.Large;
-                    <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
+                    <div class="item-display" sstyle=""margin-left:20px">
                         <p>Large</p>
-                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style="backface-visibilitymargin:10px; font-style:oblique">@item.Calories cal</div>
                         <div style=" margin:10px">@item.Price.ToString("C")</div>
                     </div>
                 }
@@ -91,7 +97,7 @@
         @if (Model.Drinks != null)
         {
             <h2>Drinks</h2>
-            @foreach (IOrderItem item in Menu.Drinks())
+            @foreach (IOrderItem item in Model.Drinks)
             {
                 <h5>@item.ToString()</h5>
                 <div style="display:flex; flex-direction:row; align-items:baseline; justify-content:center; margin-left:20px">
@@ -117,3 +123,4 @@
             }
         }
     </div>
+</div>
