@@ -57,7 +57,7 @@ namespace CowboyCafe.Data
 
         public override string Name
         {
-            get => this.ToString();
+            get => this.Size.ToString() + " " + this.ToString();
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property holding the name for display in the order summary
         /// </summary>
-        public override string Name => ToString();
+        public override string Name => this.Size.ToString() + " " + this.ToString();
 
         /// <summary>
         /// Returns the size the name of the side as a string

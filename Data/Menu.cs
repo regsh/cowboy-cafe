@@ -94,7 +94,29 @@ namespace CowboyCafe.Data
             if (terms == null) return items;
             foreach (IOrderItem item in items)
             {
-                if (item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                if(item is Side side)
+                {
+                    
+                    side.Size = Size.Small;
+                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.SmallAvailable = false;
+                    side.Size = Size.Medium;
+                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.MediumAvailable = false;
+                    side.Size = Size.Large;
+                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.LargeAvailable = false;
+                    if (side.InStock) results.Add(side);
+                }
+
+                if (item is Drink drink)
+                {
+                    drink.Size = Size.Small;
+                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.SmallAvailable = false;
+                    drink.Size = Size.Medium;
+                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.MediumAvailable = false;
+                    drink.Size = Size.Large;
+                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.LargeAvailable = false;
+                    if (drink.InStock) results.Add(drink);
+                }
+                else if (item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
                 {
                     results.Add(item);
                 }
