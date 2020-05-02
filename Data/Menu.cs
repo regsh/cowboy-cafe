@@ -5,9 +5,6 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -75,15 +72,15 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
             List<IOrderItem> completeMenu = new List<IOrderItem>();
-            foreach(IOrderItem item in Entrees())
+            foreach (IOrderItem item in Entrees())
             {
                 completeMenu.Add(item);
             }
-            foreach(IOrderItem item in Sides())
+            foreach (IOrderItem item in Sides())
             {
                 completeMenu.Add(item);
             }
-            foreach(IOrderItem item in Drinks())
+            foreach (IOrderItem item in Drinks())
             {
                 completeMenu.Add(item);
             }
@@ -95,9 +92,9 @@ namespace CowboyCafe.Data
             List<IOrderItem> results = new List<IOrderItem>();
 
             if (terms == null) return items;
-            foreach(IOrderItem item in items)
+            foreach (IOrderItem item in items)
             {
-                if(item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                if (item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
                 {
                     results.Add(item);
                 }
@@ -109,92 +106,29 @@ namespace CowboyCafe.Data
         {
             if (calorieMin == null && calorieMax == null) return items;
             var results = new List<IOrderItem>();
-            if(calorieMin == null)
+            if (calorieMin == null) calorieMin = 0;
+            if (calorieMax == null) calorieMax = uint.MaxValue;
+            foreach (IOrderItem item in items)
             {
-                foreach(IOrderItem item in items)
+                if (item is Side side)
                 {
-                    if(item is Side side)
-                    {
-                        side.Size = Size.Large;
-                        if (side.Calories <= calorieMax) results.Add(side);
-                        else
-                        {
-                            side.LargeAvailable(false);
-                            side.Size = Size.Medium;
-                            if (side.Calories <= calorieMax) results.Add(side);
-                            else
-                            {
-                                side.MediumAvailable(false);
-                                side.Size = Size.Small;
-                                if (side.Calories <= calorieMax) results.Add(side);
-                            }
-                        }
-                    }
-                    /*
-                    else if(item is Drink drink)
-                    {
-                        
-                            drink.Size = Size.Large;
-                            if (drink.Calories <= calorieMax) results.Add(drink);
-                            else
-                            {
-                                drink.LargeAvailable(false);
-                                drink.Size = Size.Medium;
-                                if (drink.Calories <= calorieMax) results.Add(drink);
-                                else
-                                {
-                                    drink.MediumAvailable(false);
-                                    drink.Size = Size.Small;
-                                    if (drink.Calories <= calorieMax) results.Add(drink);
-                                }
-                            }
-                        
-                    }
-                    */
-                    else if (item.Calories <= calorieMax) results.Add(item);
-                    
-                }
-                return results;
-            }
-
-            if(calorieMax == null)
-            {
-                foreach(IOrderItem item in items)
-                {
-                    if (item is Side side)
-                    {
-                        
-                        if (side.Calories >= calorieMin) results.Add(side);
-                        else
-                        {
-                            side.SmallAvailable(false);
-                            side.Size = Size.Medium;
-                            if (side.Calories >= calorieMin) results.Add(side);
-                            else
-                            {
-                                side.MediumAvailable(false);
-                                side.Size = Size.Large;
-                                if (side.Calories >= calorieMin) results.Add(side);
-                            }
-                        }
-                    }
-                    else if (item.Calories >= calorieMin) results.Add(item);
-                }
-                return results;
-            }
-
-            foreach(IOrderItem item in items)
-            {
-                if(item is Side side)
-                {
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.SmallAvailable(false);
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.SmallAvailable = false;
                     side.Size = Size.Medium;
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.MediumAvailable(false);
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.MediumAvailable = false;
                     side.Size = Size.Large;
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.LargeAvailable(false);
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.LargeAvailable = false;
                     results.Add(item);
                 }
-                else if(item.Calories >= calorieMin && item.Calories <= calorieMax)
+                if (item is Drink drink)
+                {
+                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.SmallAvailable = false;
+                    drink.Size = Size.Medium;
+                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.MediumAvailable = false;
+                    drink.Size = Size.Large;
+                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.LargeAvailable = false;
+                    results.Add(item);
+                }
+                else if (item.Calories >= calorieMin && item.Calories <= calorieMax)
                 {
                     results.Add(item);
                 }
@@ -206,23 +140,31 @@ namespace CowboyCafe.Data
         {
             if (priceMin == null && priceMax == null) return items;
             var results = new List<IOrderItem>();
-            if (priceMin == null)
+
+            if (priceMin == null) priceMin = 0;
+            else if (priceMax == null) priceMax = double.MaxValue;
+            
+            foreach (IOrderItem item in items)
             {
-                foreach (IOrderItem item in items)
+                if (item is Side side)
                 {
-                    if (item.Calories <= priceMax) results.Add(item);
+                    if (side.Price < priceMin || item.Price > priceMax) side.SmallAvailable = false;
+                    side.Size = Size.Medium;
+                    if (side.Price < priceMin || item.Price > priceMax) side.MediumAvailable = false;
+                    side.Size = Size.Large;
+                    if (side.Price < priceMin || item.Price > priceMax) side.LargeAvailable = false;
+                    results.Add(item);
                 }
-            }
-            else if (priceMax == null)
-            {
-                foreach (IOrderItem item in items)
+                if (item is Drink drink)
                 {
-                    if (item.Calories >= priceMin) results.Add(item);
+                    if (drink.Price < priceMin || item.Price > priceMax) drink.SmallAvailable = false;
+                    drink.Size = Size.Medium;
+                    if (drink.Price < priceMin || item.Price > priceMax) drink.MediumAvailable = false;
+                    drink.Size = Size.Large;
+                    if (drink.Price < priceMin || item.Price > priceMax) drink.LargeAvailable = false;
+                    results.Add(item);
                 }
-            }
-            else foreach (IOrderItem item in items)
-            {
-                if (item.Calories >= priceMin && item.Calories <= priceMax)
+                else if (item.Price >= priceMin && item.Price <= priceMax)
                 {
                     results.Add(item);
                 }

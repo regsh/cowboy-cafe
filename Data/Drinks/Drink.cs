@@ -36,6 +36,13 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool SmallAvailable { get; set; } = true;
+
+        public bool MediumAvailable { get; set; } = true;
+
+        public bool LargeAvailable { get; set; } = true;
+
+        public bool InStock { get => (SmallAvailable || MediumAvailable || LargeAvailable); }
 
         /// <summary>
         /// Represents the price of the drink
