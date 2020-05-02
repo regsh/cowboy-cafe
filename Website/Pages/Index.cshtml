@@ -17,13 +17,12 @@
 
     <form id="menu-filter">
         <div id="search">
-            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" placeholder="keyword" style="margin-bottom: 5px"/>
             <input type="submit" value="Search" />
         </div>
 
         <div id="filters">
             <div id="item-type">
-                <h4>Category</h4>
                 @foreach (string type in Menu.MenuItemTypes)
                 {
                     <label>
@@ -32,17 +31,16 @@
                     </label>
                 }
             </div>
-
-
-            <h4>Calories</h4>
             <div>
+                <h4>Calories</h4>
                 Between
-                <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" />
+                <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" maxlength="4" />
                 and
                 <input name="CalorieMax" type="number" min="0" max="700" step="5" placeholder="max" value="@Model.CalorieMax" />
             </div>
-            <h4>Price</h4>
             <div>
+                <h4>Price</h4>
+
                 Between
                 <input name="PriceMin" type="number" min="0" max="8.00" step=".01" placeholder="min" value="@Model.PriceMin" />
                 and
@@ -70,26 +68,38 @@
             <h2 style="text-align:center">Sides</h2>
             @foreach (IOrderItem item in Model.Sides)
             {
-                <h5>@item.ToString()</h5>
-                <div class="item-display" style="margin-left:20px">
-                    <p>Small</p>
-                    <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                    <div style=" margin:10px">@item.Price.ToString("C")</div>
-                </div>
                 @if (item is Side side)
                 {
-                    side.Size = Size.Medium;
-                    <div class="item-display" style="margin-left:20px">
-                        <p>Medium</p>
-                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                        <div style=" margin:10px">@item.Price.ToString("C")</div>
-                    </div>
-                    side.Size = Size.Large;
-                    <div class="item-display" sstyle=""margin-left:20px">
-                        <p>Large</p>
-                        <div style="backface-visibilitymargin:10px; font-style:oblique">@item.Calories cal</div>
-                        <div style=" margin:10px">@item.Price.ToString("C")</div>
-                    </div>
+                    if (side.Available)
+                    {
+                        <h5>@item.ToString()</h5>
+                        @if (side.SizesAvailable[0])
+                        {
+                            <div class="item-display" style="margin-left:20px">
+                                <p>Small</p>
+                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                <div style=" margin:10px">@item.Price.ToString("C")</div>
+                            </div>
+                        }
+                        @if (side.SizesAvailable[1])
+                        {
+                            side.Size = Size.Medium;
+                            <div class="item-display" style="margin-left:20px">
+                                <p>Medium</p>
+                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                <div style=" margin:10px">@item.Price.ToString("C")</div>
+                            </div>
+                        }
+                        @if (side.SizesAvailable[2])
+                        {
+                            side.Size = Size.Large;
+                            <div class="item-display" style="margin-left:20px">
+                                <p>Large</p>
+                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                <div style=" margin:10px">@item.Price.ToString("C")</div>
+                            </div>
+                        }
+                    }
                 }
             }
         }

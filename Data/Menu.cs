@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -112,7 +113,46 @@ namespace CowboyCafe.Data
             {
                 foreach(IOrderItem item in items)
                 {
-                    if (item.Calories <= calorieMax) results.Add(item);
+                    if(item is Side side)
+                    {
+                        side.Size = Size.Large;
+                        if (side.Calories <= calorieMax) results.Add(side);
+                        else
+                        {
+                            side.LargeAvailable(false);
+                            side.Size = Size.Medium;
+                            if (side.Calories <= calorieMax) results.Add(side);
+                            else
+                            {
+                                side.MediumAvailable(false);
+                                side.Size = Size.Small;
+                                if (side.Calories <= calorieMax) results.Add(side);
+                            }
+                        }
+                    }
+                    /*
+                    else if(item is Drink drink)
+                    {
+                        
+                            drink.Size = Size.Large;
+                            if (drink.Calories <= calorieMax) results.Add(drink);
+                            else
+                            {
+                                drink.LargeAvailable(false);
+                                drink.Size = Size.Medium;
+                                if (drink.Calories <= calorieMax) results.Add(drink);
+                                else
+                                {
+                                    drink.MediumAvailable(false);
+                                    drink.Size = Size.Small;
+                                    if (drink.Calories <= calorieMax) results.Add(drink);
+                                }
+                            }
+                        
+                    }
+                    */
+                    else if (item.Calories <= calorieMax) results.Add(item);
+                    
                 }
                 return results;
             }
@@ -121,14 +161,40 @@ namespace CowboyCafe.Data
             {
                 foreach(IOrderItem item in items)
                 {
-                    if (item.Calories >= calorieMin) results.Add(item);
+                    if (item is Side side)
+                    {
+                        
+                        if (side.Calories >= calorieMin) results.Add(side);
+                        else
+                        {
+                            side.SmallAvailable(false);
+                            side.Size = Size.Medium;
+                            if (side.Calories >= calorieMin) results.Add(side);
+                            else
+                            {
+                                side.MediumAvailable(false);
+                                side.Size = Size.Large;
+                                if (side.Calories >= calorieMin) results.Add(side);
+                            }
+                        }
+                    }
+                    else if (item.Calories >= calorieMin) results.Add(item);
                 }
                 return results;
             }
 
             foreach(IOrderItem item in items)
             {
-                if(item.Calories >= calorieMin && item.Calories <= calorieMax)
+                if(item is Side side)
+                {
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.SmallAvailable(false);
+                    side.Size = Size.Medium;
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.MediumAvailable(false);
+                    side.Size = Size.Large;
+                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.LargeAvailable(false);
+                    results.Add(item);
+                }
+                else if(item.Calories >= calorieMin && item.Calories <= calorieMax)
                 {
                     results.Add(item);
                 }

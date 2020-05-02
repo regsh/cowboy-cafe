@@ -54,10 +54,33 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract string Name { get; }
 
+        public virtual bool[] SizesAvailable { get; set; } = new bool[3] { true, true, true };
+
+        public bool Available { get
+            {
+                return (SizesAvailable[0] || SizesAvailable[1] || SizesAvailable[2]);
+            }
+        }
+
         //can i just make this null and do a null check later?
         //no sides have special instructions
         public List<string> SpecialInstructions { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void SmallAvailable(bool available)
+        {
+            SizesAvailable[0] = available;
+        }
+
+        public void MediumAvailable(bool available)
+        {
+            SizesAvailable[1] = available;
+        }
+
+        public void LargeAvailable(bool available)
+        {
+            SizesAvailable[2] = available;
+        }
     }
 }
