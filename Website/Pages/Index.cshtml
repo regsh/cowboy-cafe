@@ -49,100 +49,113 @@
         </div>
     </form>
 
-    <div class="menu">
-        @if (Model.Entrees != null)
-        {
-            <h2>Entrees</h2>
-            @foreach (IOrderItem item in Model.Entrees)
+    <div id="menu">
+        <div id="entrees">
+            @if (Model.Entrees != null)
             {
-                <!-- <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center"> -->
-                <div class="item-display">
-                    <h5>@item.Name</h5>
-                    <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                    <div style=" margin:10px">@item.Price.ToString("C")</div>
+                <h2>Entrees</h2>
+                @foreach (IOrderItem item in Model.Entrees)
+                {
+                    <!-- <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center"> -->
+                    <div class="item-display">
+                        <h5>@item.Name</h5>
+                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                    </div>
+                }
+            }
+        </div>
+
+            @if (Model.Sides != null)
+            {
+                <h2 style="text-align:center">Sides</h2>
+                <div id="sides">
+                    @foreach (IOrderItem item in Model.Sides)
+                    {
+                        @if (item is Side side)
+                        {
+                            if (side.InStock)
+                            {
+                            <div class="side">
+                                <h5>@item.ToString()</h5>
+                                @if (side.SmallAvailable)
+                                {
+                                    side.Size = Size.Small;
+                                    <div class="item-display" style="margin-left:20px">
+                                        <p>Small</p>
+                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                                @if (side.MediumAvailable)
+                                {
+                                    side.Size = Size.Medium;
+                                    <div class="item-display" style="margin-left:20px">
+                                        <p>Medium</p>
+                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                                @if (side.LargeAvailable)
+                                {
+                                    side.Size = Size.Large;
+                                    <div class="item-display" style="margin-left:20px">
+                                        <p>Large</p>
+                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                            </div>
+                            }
+                        }
+                    }
                 </div>
             }
-        }
-        @if (Model.Sides != null)
-        {
-            <h2 style="text-align:center">Sides</h2>
-            @foreach (IOrderItem item in Model.Sides)
+        
+            @if (Model.Drinks != null)
             {
-                @if (item is Side side)
-                {
-                    if (side.InStock)
-                    {
-                        <h5>@item.ToString()</h5>
-                        @if (side.SmallAvailable)
+                <h2 style="text-align:center">Drinks</h2>
+                <div id="drinks">
+                    @foreach (IOrderItem item in Model.Drinks)
+                        @if (item is Drink drink)
                         {
-                            side.Size = Size.Small;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Small</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
-                        }
-                        @if (side.MediumAvailable)
-                        {
-                            side.Size = Size.Medium;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Medium</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
-                        }
-                        @if (side.LargeAvailable)
-                        {
-                            side.Size = Size.Large;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Large</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
-                        }
-                    }
-                }
-            }
-        }
+                            if (drink.InStock)
+                            {
+                                <div class="drink">
+                                    <h5>@item.ToString()</h5>
+                                    @if (drink.SmallAvailable)
+                                    {
+                                        drink.Size = Size.Small;
+                                        <div class="item-display" style="margin-left:20px">
+                                            <p>Small</p>
+                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        </div>
+                                    }
+                                    @if (drink.MediumAvailable)
+                                    {
+                                        drink.Size = Size.Medium;
+                                        <div class="item-display" style="margin-left:20px">
+                                            <p>Medium</p>
+                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        </div>
+                                    }
+                                    @if (drink.LargeAvailable)
+                                    {
+                                        drink.Size = Size.Large;
+                                        <div class="item-display" style="margin-left:20px">
+                                            <p>Large</p>
+                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        </div>
+                                    }
+                                </div>
+                                }
 
-        @if (Model.Drinks != null)
-        {
-            <h2 style="text-align:center">Drinks</h2>
-            @foreach (IOrderItem item in Model.Drinks)
-                @if (item is Drink drink)
-                {
-                    if (drink.InStock)
-                    {
-                        <h5>@item.ToString()</h5>
-                        @if (drink.SmallAvailable)
-                        {
-                            drink.Size = Size.Small;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Small</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
+                            }
+                 </div>
+                                
                         }
-                        @if (drink.MediumAvailable)
-                        {
-                            drink.Size = Size.Medium;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Medium</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
-                        }
-                        @if (drink.LargeAvailable)
-                        {
-                            drink.Size = Size.Large;
-                            <div class="item-display" style="margin-left:20px">
-                                <p>Large</p>
-                                <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                <div style=" margin:10px">@item.Price.ToString("C")</div>
-                            </div>
-                        }
-                    }
-                }
-            }
     </div>
 </div>
