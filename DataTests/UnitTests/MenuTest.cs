@@ -6,6 +6,7 @@
 using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -134,5 +135,57 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             Assert.Equal(15, Menu.CompleteMenu().Count());
         }
+
+        [Theory]
+        [InlineData(typeof(Trailburger))]
+        [InlineData(typeof(DakotaDoubleBurger))]
+        [InlineData(typeof(TexasTripleBurger))]
+        public void SearchForBurgerContainsAllBurgerItems(Type type)
+        {
+            IEnumerable<IOrderItem> items = Menu.CompleteMenu();
+            Menu.CompleteSearch(items, "burger");
+            var types = new List<Type>();
+            foreach(IOrderItem item in items)
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
+        [Fact]
+        public void SearchForBurgerYieldsThreeItems()
+        {
+            var result = Menu.CompleteSearch(Menu.CompleteMenu(), "burger");
+            Assert.Equal(3, result.Count());
+        }
+
+        [Fact]
+        public void SearchForCowReturnsTwoItems()
+        {
+            var result = Menu.CompleteSearch(Menu.CompleteMenu(), "cow");
+            Assert.Equal(2, result.Count());
+        }
+
+        [Fact]
+        public void SearchIsNotCaseSensitive()
+        {
+            var resultOne = Menu.CompleteSearch(Menu.CompleteMenu(), "te");
+            var resultTwo = Menu.CompleteSearch(Menu.CompleteMenu(), "TE");
+
+            Assert.Equal(resultOne.Count(), resultTwo.Count());
+        }
+
+        [Fact]
+        public void CalorieFilterWithNoValuesReturnsCompleteMenu()
+        {
+            Assert.Equal(Menu.CompleteMenu().Count(), Menu.FilterByCalories(Menu.CompleteMenu(), null, null).Count());
+        }
+
+        [Fact] 
+        public void PriceFilterWithNoValuesReturnsCompleteMenu()
+        {
+            Assert.Equal(Menu.CompleteMenu().Count(), Menu.FilterByPrice(Menu.CompleteMenu(), null, null).Count());
+        }
+
+        
     }
 }

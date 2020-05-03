@@ -96,24 +96,41 @@ namespace CowboyCafe.Data
             {
                 if(item is Side side)
                 {
-                    
-                    side.Size = Size.Small;
-                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.SmallAvailable = false;
-                    side.Size = Size.Medium;
-                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.MediumAvailable = false;
-                    side.Size = Size.Large;
-                    if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.LargeAvailable = false;
+                    if (side.SmallAvailable)
+                    {
+                        side.Size = Size.Small;
+                        if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.SmallAvailable = false;
+                    }
+                    if (side.MediumAvailable)
+                    {
+                        side.Size = Size.Medium;
+                        if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.MediumAvailable = false;
+                    }
+                    if (side.LargeAvailable)
+                    {
+                        side.Size = Size.Large;
+                        if (!side.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) side.LargeAvailable = false;
+                    }
                     if (side.InStock) results.Add(side);
                 }
 
                 if (item is Drink drink)
                 {
-                    drink.Size = Size.Small;
-                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.SmallAvailable = false;
-                    drink.Size = Size.Medium;
-                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.MediumAvailable = false;
-                    drink.Size = Size.Large;
-                    if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.LargeAvailable = false;
+                    if (drink.SmallAvailable)
+                    {
+                        drink.Size = Size.Small;
+                        if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.SmallAvailable = false;
+                    }
+                    if (drink.MediumAvailable)
+                    {
+                        drink.Size = Size.Medium;
+                        if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.MediumAvailable = false;
+                    }
+                    if (drink.LargeAvailable)
+                    {
+                        drink.Size = Size.Large;
+                        if (!drink.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase)) drink.LargeAvailable = false;
+                    }
                     if (drink.InStock) results.Add(drink);
                 }
                 else if (item.Name.Contains(terms, StringComparison.InvariantCultureIgnoreCase))
@@ -134,20 +151,40 @@ namespace CowboyCafe.Data
             {
                 if (item is Side side)
                 {
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.SmallAvailable = false;
-                    side.Size = Size.Medium;
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.MediumAvailable = false;
-                    side.Size = Size.Large;
-                    if (side.Calories < calorieMin || item.Calories > calorieMax) side.LargeAvailable = false;
+                    if (side.SmallAvailable)
+                    {
+                        side.Size = Size.Small;
+                        if (side.Calories < calorieMin || item.Calories > calorieMax) side.SmallAvailable = false;
+                    }
+                    if (side.MediumAvailable)
+                    {
+                        side.Size = Size.Medium;
+                        if (side.Calories < calorieMin || item.Calories > calorieMax) side.MediumAvailable = false;
+                    }
+                    if (side.LargeAvailable)
+                    {
+                        side.Size = Size.Large;
+                        if (side.Calories < calorieMin || item.Calories > calorieMax) side.LargeAvailable = false;
+                    }
                     results.Add(item);
                 }
                 if (item is Drink drink)
                 {
-                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.SmallAvailable = false;
-                    drink.Size = Size.Medium;
-                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.MediumAvailable = false;
-                    drink.Size = Size.Large;
-                    if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.LargeAvailable = false;
+                    if (drink.SmallAvailable)
+                    {
+                        drink.Size = Size.Small;
+                        if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.SmallAvailable = false;
+                    }
+                    if (drink.MediumAvailable)
+                    {
+                        drink.Size = Size.Medium;
+                        if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.MediumAvailable = false;
+                    }
+                    if (drink.LargeAvailable)
+                    {
+                        drink.Size = Size.Large;
+                        if (drink.Calories < calorieMin || item.Calories > calorieMax) drink.LargeAvailable = false;
+                    }
                     results.Add(item);
                 }
                 else if (item.Calories >= calorieMin && item.Calories <= calorieMax)
@@ -170,20 +207,40 @@ namespace CowboyCafe.Data
             {
                 if (item is Side side)
                 {
-                    if (side.Price < priceMin || item.Price > priceMax) side.SmallAvailable = false;
-                    side.Size = Size.Medium;
-                    if (side.Price < priceMin || item.Price > priceMax) side.MediumAvailable = false;
-                    side.Size = Size.Large;
-                    if (side.Price < priceMin || item.Price > priceMax) side.LargeAvailable = false;
+                    if (side.SmallAvailable)
+                    {
+                        side.Size = Size.Small;
+                        if (side.Price < priceMin || item.Price > priceMax) side.SmallAvailable = false;
+                    }
+                    if (side.MediumAvailable)
+                    {
+                        side.Size = Size.Medium;
+                        if (side.Price < priceMin || item.Price > priceMax) side.MediumAvailable = false;
+                    }
+                    if (side.LargeAvailable)
+                    {
+                        side.Size = Size.Large;
+                        if (side.Price < priceMin || item.Price > priceMax) side.LargeAvailable = false;
+                    }
                     results.Add(item);
                 }
                 if (item is Drink drink)
                 {
-                    if (drink.Price < priceMin || item.Price > priceMax) drink.SmallAvailable = false;
-                    drink.Size = Size.Medium;
-                    if (drink.Price < priceMin || item.Price > priceMax) drink.MediumAvailable = false;
-                    drink.Size = Size.Large;
-                    if (drink.Price < priceMin || item.Price > priceMax) drink.LargeAvailable = false;
+                    if (drink.SmallAvailable)
+                    {
+                        drink.Size = Size.Small;
+                        if (drink.Price < priceMin || item.Price > priceMax) drink.SmallAvailable = false;
+                    }
+                    if (drink.MediumAvailable)
+                    {
+                        drink.Size = Size.Medium;
+                        if (drink.Price < priceMin || item.Price > priceMax) drink.MediumAvailable = false;
+                    }
+                    if (drink.LargeAvailable)
+                    {
+                        drink.Size = Size.Large;
+                        if (drink.Price < priceMin || item.Price > priceMax) drink.LargeAvailable = false;
+                    }
                     results.Add(item);
                 }
                 else if (item.Price >= priceMin && item.Price <= priceMax)
