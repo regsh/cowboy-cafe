@@ -46,9 +46,55 @@ namespace Website.Pages
             if(ItemType.Contains("Entrees") || ItemType.Count() == 0)
             {
                 Entrees = Menu.Entrees();
+                if(SearchTerms != null)
+                {
+                    Entrees = Entrees.Where(entree =>
+                        entree.Name.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase)
+                        );
+                }
+                if(!(CalorieMin == null && CalorieMax == null))
+                {
+                    if (CalorieMax == null)
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Calories >= CalorieMin);
+                    }
+                    else if (CalorieMin == null)
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Calories <= CalorieMax);
+                    }
+                    else
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Calories >= CalorieMin &&
+                            entree.Calories <= CalorieMax);
+                    }
+                }
+                if (!(PriceMin == null && PriceMax == null))
+                {
+                    if (PriceMax == null)
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Price >= PriceMin);
+                    }
+                    else if (PriceMin == null)
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Price <= PriceMax);
+                    }
+                    else
+                    {
+                        Entrees = Entrees.Where(entree =>
+                            entree.Price >= PriceMin &&
+                            entree.Price <= PriceMax);
+                    }
+                }
+                /*
                 Entrees = Menu.CompleteSearch(Entrees, SearchTerms);
                 Entrees = Menu.FilterByCalories(Entrees, CalorieMin, CalorieMax);
                 Entrees = Menu.FilterByPrice(Entrees, PriceMin, PriceMax);
+                */
             }
             if (ItemType.Contains("Sides") || ItemType.Count() == 0)
             {

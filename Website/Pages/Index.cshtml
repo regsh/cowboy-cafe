@@ -21,31 +21,31 @@
             <input type="submit" value="Search" />
         </div>
 
-        <div id="filters">
-            <div id="item-type">
-                @foreach (string type in Menu.MenuItemTypes)
-                {
-                    <label>
-                        <input type="checkbox" name="ItemType" value=@type checked="@Model.ItemType.Contains(type)" />
-                        @type
-                    </label>
-                }
-            </div>
-            <div id="calorie-filter">
-                <h4>Calories</h4>
-                Between
-                <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" maxlength="4" />
-                and
-                <input name="CalorieMax" type="number" min="0" max="700" step="5" placeholder="max" value="@Model.CalorieMax" />
-            </div>
-            <div id="price-filter">
-                <h4>Price</h4>
-                Between
-                <input name="PriceMin" type="number" min="0" max="8.00" step=".01" placeholder="min" value="@Model.PriceMin" />
-                and
-                <input name="PriceMax" type="number" min="0" max="8.00" step=".01" placeholder="max" value="@Model.PriceMax" />
-            </div>
+        
+        <div id="item-type">
+            @foreach (string type in Menu.MenuItemTypes)
+            {
+                <label>
+                    <input type="checkbox" name="ItemType" value=@type checked="@Model.ItemType.Contains(type)" />
+                    @type
+                </label>
+            }
         </div>
+        <div id="calorie-filter">
+                <h6>Calories</h6>
+                <input name="CalorieMin" type="number" min="0" max="700" step="5" placeholder="min" value="@Model.CalorieMin" maxlength="4" />
+                -
+                <input name="CalorieMax" type="number" min="0" max="700" step="5" placeholder="max" value="@Model.CalorieMax" />
+                
+        </div>
+        <div id="price-filter">
+            <h6>Price</h6>
+                
+            <input name="PriceMin" type="number" min="0" max="8.00" step=".01" placeholder="min" value="@Model.PriceMin" />
+            -
+            <input name="PriceMax" type="number" min="0" max="8.00" step=".01" placeholder="max" value="@Model.PriceMax" />
+        </div>
+        
     </form>
     <div id="menu">
         <div id="entrees">
@@ -118,36 +118,46 @@
                     {
                         if (drink.InStock)
                         {
-                            <div class="drink">
-                                <h5>@item.ToString()</h5>
-                                @if (drink.SmallAvailable)
-                                {
-                                    drink.Size = Size.Small;
-                                    <div class="item-display" style="margin-left:20px">
-                                        <p>Small</p>
-                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
-                                    </div>
-                                }
-                                @if (drink.MediumAvailable)
-                                {
-                                    drink.Size = Size.Medium;
-                                    <div class="item-display" style="margin-left:20px">
-                                        <p>Medium</p>
-                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
-                                    </div>
-                                }
-                                @if (drink.LargeAvailable)
-                                {
-                                    drink.Size = Size.Large;
-                                    <div class="item-display" style="margin-left:20px">
-                                        <p>Large</p>
-                                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                        <div style=" margin:10px">@item.Price.ToString("C")</div>
-                                    </div>
-                                }
-                            </div>
+                            
+                
+                    <h5>@item.ToString()</h5>
+                    @if(drink is JerkedSoda)
+                    {
+                    <div id="soda-flavors">
+                        @foreach (SodaFlavor sodaFlavor in Enum.GetValues(typeof(SodaFlavor)))
+                        {
+                        <div style="font-style:italic; margin:5px; font-size:small; text-align:center;"> @sodaFlavor.ToString() </div>
+                        }
+                    </div>
+                    }
+                    @if (drink.SmallAvailable)
+                    {
+                        drink.Size = Size.Small;
+                        <div class="item-display" style="margin-left:20px">
+                            <p>Small</p>
+                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                        </div>
+                    }
+                    @if (drink.MediumAvailable)
+                    {
+                        drink.Size = Size.Medium;
+                        <div class="item-display" style="margin-left:20px">
+                            <p>Medium</p>
+                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                        </div>
+                    }
+                    @if (drink.LargeAvailable)
+                    {
+                        drink.Size = Size.Large;
+                        <div class="item-display" style="margin-left:20px">
+                            <p>Large</p>
+                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
+                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                        </div>
+                    }
+                
                         }
 
                     }

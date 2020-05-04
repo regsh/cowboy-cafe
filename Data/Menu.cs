@@ -23,6 +23,18 @@ namespace CowboyCafe.Data
             };
         }
 
+        public static string[] SodaFlavors
+        {
+            get => new string[]
+            {
+            "Cream Soda",
+            "Orange Soda",
+            "Sarsaparilla",
+            "Birch Beer",
+            "Root Beer"
+            };
+        }
+
         /// <summary>
         /// Returns IEnumerable containing instance of all CowboyCafe entrees
         /// </summary>
@@ -114,7 +126,7 @@ namespace CowboyCafe.Data
                     if (side.InStock) results.Add(side);
                 }
 
-                if (item is Drink drink)
+                else if (item is Drink drink)
                 {
                     if (drink.SmallAvailable)
                     {
