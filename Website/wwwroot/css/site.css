@@ -100,16 +100,11 @@ body {
 #menu{
     grid-column:2;
     grid-row:2;
-}
-#sides{
     display:flex;
     flex-direction:row;
+    justify-content:space-around;
 }
 
-#drinks{
-    display:flex;
-    flex-direction:row;
-}
 #search{
     padding:5px;
     display:flex;
@@ -121,9 +116,27 @@ body {
     align-items: baseline;
     justify-content: center
 }
+.side{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
 
-    #menu-filter input[type=number] {
-        width: 3rem;
+#menu-filter input[type=number] {
+    width: 3rem;
+}
+
+@media(max-width:900px){
+    #menu-page {
+        display: flex;
+        flex-direction: column;
     }
+}
+
+@media (max-width: 490px){
+    #menu{
+        flex-direction: column;
+    }
+}
 
 
