@@ -114,16 +114,22 @@ body {
     display:flex;
     flex-direction:column;
 }
-.item-display {
+.size-info {
     display: flex;
     flex-direction: row;
+    justify-content:space-between;
     align-items: baseline;
-    justify-content: center
 }
 .side{
     display:flex;
     flex-direction:column;
-    justify-content:flex-start;
+}
+.entree{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    align-items:baseline;
 }
 
 #menu-filter input[type=number] {

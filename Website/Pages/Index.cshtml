@@ -55,10 +55,10 @@
                 @foreach (IOrderItem item in Model.Entrees)
                 {
                     <!-- <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center"> -->
-                    <div class="item-display">
+                    <div class="entree">
                         <h5>@item.Name</h5>
-                        <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                        <div style=" margin:10px">@item.Price.ToString("C")</div>
+                        <div>@item.Calories cal</div>
+                        <div>@item.Price.ToString("C")</div>
                     </div>
                 }
             }
@@ -78,28 +78,28 @@
                                     @if (side.SmallAvailable)
                                     {
                                         side.Size = Size.Small;
-                                        <div class="item-display" style="margin:5px;">
-                                            <p>Small</p>
-                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        <div class="size-info">
+                                            <div>S</div>
+                                            <div>@item.Calories cal</div>
+                                            <div>@item.Price.ToString("C")</div>
                                         </div>
                                     }
                                     @if (side.MediumAvailable)
                                     {
                                         side.Size = Size.Medium;
-                                        <div class="item-display" style="margin-left:20px">
-                                            <p>Medium</p>
-                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        <div class="size-info">
+                                            <div>M</div>
+                                            <div>@item.Calories cal</div>
+                                            <div>@item.Price.ToString("C")</div>
                                         </div>
                                     }
                                     @if (side.LargeAvailable)
                                     {
                                         side.Size = Size.Large;
-                                        <div class="item-display" style="margin-left:20px">
-                                            <p>Large</p>
-                                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                                        <div class="size-info">
+                                            <div>L</div>
+                                            <div>@item.Calories cal</div>
+                                            <div>@item.Price.ToString("C")</div>
                                         </div>
                                     }
                                 </div>
@@ -133,10 +133,10 @@
                     @if (drink.SmallAvailable)
                     {
                         drink.Size = Size.Small;
-                        <div class="item-display" style="margin-left:20px">
-                            <p>Small</p>
-                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                            <div style=" margin:10px">@item.Price.ToString("C")</div>
+                        <div class="item-display" >
+                            <div>Small</div>
+                            <div style="font-style:oblique">@item.Calories cal</div>
+                            <div>@item.Price.ToString("C")</div>
                         </div>
                     }
                     @if (drink.MediumAvailable)
