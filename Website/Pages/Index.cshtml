@@ -63,7 +63,7 @@
                 }
             }
         </div>
-        <div id="sides">
+        <div>
             @if (Model.Sides != null)
             {
                 <h2 style="text-align:center">Sides</h2>
@@ -73,7 +73,7 @@
                         {
                             if (side.InStock)
                             {
-                                <div class="side">
+                                <div class="sized-item">
                                     <h5>@item.ToString()</h5>
                                     @if (side.SmallAvailable)
                                     {
@@ -118,45 +118,46 @@
                     {
                         if (drink.InStock)
                         {
-                            
-                
-                    <h5>@item.ToString()</h5>
-                    @if(drink is JerkedSoda)
-                    {
-                    <div id="soda-flavors">
-                        @foreach (SodaFlavor sodaFlavor in Enum.GetValues(typeof(SodaFlavor)))
-                        {
-                        <div style="font-style:italic; margin:5px; font-size:small; text-align:center;"> @sodaFlavor.ToString() </div>
-                        }
-                    </div>
-                    }
-                    @if (drink.SmallAvailable)
-                    {
-                        drink.Size = Size.Small;
-                        <div class="item-display" >
-                            <div>Small</div>
-                            <div style="font-style:oblique">@item.Calories cal</div>
-                            <div>@item.Price.ToString("C")</div>
-                        </div>
-                    }
-                    @if (drink.MediumAvailable)
-                    {
-                        drink.Size = Size.Medium;
-                        <div class="item-display" style="margin-left:20px">
-                            <p>Medium</p>
-                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                            <div style=" margin:10px">@item.Price.ToString("C")</div>
-                        </div>
-                    }
-                    @if (drink.LargeAvailable)
-                    {
-                        drink.Size = Size.Large;
-                        <div class="item-display" style="margin-left:20px">
-                            <p>Large</p>
-                            <div style="margin:10px; font-style:oblique">@item.Calories cal</div>
-                            <div style=" margin:10px">@item.Price.ToString("C")</div>
-                        </div>
-                    }
+                            <div class="sized-item">
+
+                                <h5>@item.ToString()</h5>
+                                @if (drink is JerkedSoda)
+                                {
+                                    <div id="soda-flavors">
+                                        @foreach (SodaFlavor sodaFlavor in Enum.GetValues(typeof(SodaFlavor)))
+                                        {
+                                            <div style="font-style:italic; margin:5px; font-size:small; text-align:center;"> @sodaFlavor.ToString() </div>
+                                        }
+                                    </div>
+                                }
+                                @if (drink.SmallAvailable)
+                                {
+                                    drink.Size = Size.Small;
+                                    <div class="size-info">
+                                        <div>S</div>
+                                        <div>@item.Calories cal</div>
+                                        <div>@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                                @if (drink.MediumAvailable)
+                                {
+                                    drink.Size = Size.Medium;
+                                    <div class="size-info">
+                                        <div>M</div>
+                                        <div>@item.Calories cal</div>
+                                        <div>@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                                @if (drink.LargeAvailable)
+                                {
+                                    drink.Size = Size.Large;
+                                    <div class="size-info">
+                                        <div>L</div>
+                                        <div>@item.Calories cal</div>
+                                        <div>@item.Price.ToString("C")</div>
+                                    </div>
+                                }
+                            </div>
                 
                         }
 
